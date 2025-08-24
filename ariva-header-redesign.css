@@ -68,60 +68,38 @@ body {
     padding: 0 var(--spacing-lg);
 }
 
-/* Live Ticker Bar - Subtle Version */
-.ticker-bar {
-    background: var(--color-surface);
-    color: var(--color-text-primary);
-    height: 28px;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 1px solid var(--color-border);
+/* Mini Ticker in Header */
+.mini-ticker {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+    border-left: 1px solid var(--color-border);
     font-size: 12px;
 }
 
-.ticker-container {
-    height: 100%;
+.mini-ticker-item {
     display: flex;
-    align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-}
-
-.ticker-content {
-    display: flex;
-    white-space: nowrap;
-    gap: 24px;
-}
-
-.ticker-item {
-    display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 
-.ticker-symbol {
-    font-size: 11px;
-    font-weight: 600;
+.ticker-label {
     color: var(--color-text-secondary);
-}
-
-.ticker-price {
-    font-size: 12px;
     font-weight: 500;
-    color: var(--color-text-primary);
-}
-
-.ticker-change {
     font-size: 11px;
-    font-weight: 600;
 }
 
-.ticker-change.positive {
+.ticker-value {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.ticker-value.positive {
     color: var(--color-positive);
 }
 
-.ticker-change.negative {
+.ticker-value.negative {
     color: var(--color-negative);
 }
 
@@ -132,7 +110,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 28px; /* Account for smaller ticker bar */
+    top: 0; /* No ticker bar above anymore */
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -260,7 +238,7 @@ body {
     border: 2px solid var(--color-primary);
     padding: 6px 18px;
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 500;  /* Same as login button */
     transition: all var(--transition-base);
     position: relative;
 }
@@ -780,6 +758,11 @@ body.mobile-menu-open .mobile-menu {
     /* Hide secondary navigation on mobile */
     .header-secondary {
         display: none !important;
+    }
+    
+    /* Hide mini ticker on mobile */
+    .mini-ticker {
+        display: none;
     }
     
     .header-content {
