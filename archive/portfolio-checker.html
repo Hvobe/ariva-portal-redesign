@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Checker - Ariva Portal</title>
+    <link rel="stylesheet" href="ariva-redesign.css">
+    <link rel="stylesheet" href="ariva-header.css">
+    <link rel="stylesheet" href="portfolio-checker.css">
+    <script src="ariva-header.js" defer></script>
+</head>
+<body>
+    <!-- Include Header (in production this would be a server-side include) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Portfolio-Checker Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Portfolio-Checker</h1>
+                    <p class="hero-subtitle">Behalten Sie Ihre Investments im Blick - kostenlos und ohne Anmeldung</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="btn-icon">
+                                <path d="M10 5v10m-5-5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Neues Portfolio erstellen
+                        </button>
+                        <button class="btn btn-outline btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="btn-icon">
+                                <path d="M7 10l3 3 3-3m0-4l-3-3-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Portfolio importieren
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="portfolio-preview">
+                        <div class="preview-header">
+                            <span class="preview-title">Mein Portfolio</span>
+                            <span class="preview-value text-accent">+12,45%</span>
+                        </div>
+                        <div class="preview-chart">
+                            <svg viewBox="0 0 200 100" class="performance-chart">
+                                <path d="M0,80 L30,70 L60,50 L90,55 L120,40 L150,35 L180,20 L200,25" 
+                                      stroke="var(--color-accent)" 
+                                      stroke-width="2" 
+                                      fill="none"/>
+                                <path d="M0,80 L30,70 L60,50 L90,55 L120,40 L150,35 L180,20 L200,25 L200,100 L0,100" 
+                                      fill="url(#gradient)" 
+                                      opacity="0.1"/>
+                                <defs>
+                                    <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" style="stop-color:var(--color-accent);stop-opacity:0.5" />
+                                        <stop offset="100%" style="stop-color:var(--color-accent);stop-opacity:0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <div class="info-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 8v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <h3 class="info-title">Neu: Portfolio-Checker statt Depot</h3>
+                    <p class="info-text">Wir haben unser kostenloses Portfolio-Tool umbenannt, um Missverständnisse zu vermeiden. Der Portfolio-Checker ist und bleibt komplett kostenlos - keine versteckten Gebühren, keine Anmeldung erforderlich.</p>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <section class="features-section">
+                <h2 class="section-title">Was kann der Portfolio-Checker?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 20l4-4 4 4m-4-4V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Performance-Tracking</h3>
+                        <p class="feature-description">Verfolgen Sie die Entwicklung Ihrer Investments in Echtzeit mit detaillierten Charts und Kennzahlen.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 8v8l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Realtime-Kurse</h3>
+                        <p class="feature-description">Aktuelle Kursdaten für Aktien, ETFs, Fonds und weitere Anlageklassen - immer auf dem neuesten Stand.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M8 12h16M8 20h16M12 8l4 16m0-16l-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Diversifikations-Analyse</h3>
+                        <p class="feature-description">Behalten Sie die Verteilung Ihres Portfolios im Blick und optimieren Sie Ihre Asset-Allokation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 4v24m-8-8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Watchlist-Funktion</h3>
+                        <p class="feature-description">Beobachten Sie interessante Wertpapiere und verpassen Sie keine Kaufgelegenheit mehr.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Portfolio -->
+            <section class="portfolio-section">
+                <h2 class="section-title">Beispiel-Portfolio</h2>
+                <div class="portfolio-container">
+                    <div class="portfolio-header">
+                        <div class="portfolio-info">
+                            <h3 class="portfolio-name">Dividenden-Portfolio</h3>
+                            <p class="portfolio-meta">5 Positionen · Erstellt am 15.03.2024</p>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-label">Gesamtwert</span>
+                                <span class="stat-value">25.430,50 €</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Tagesperformance</span>
+                                <span class="stat-value text-accent">+1,23%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Gesamtperformance</span>
+                                <span class="stat-value text-accent">+8,45%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-positions">
+                        <table class="positions-table">
+                            <thead>
+                                <tr>
+                                    <th>Wertpapier</th>
+                                    <th>Stück</th>
+                                    <th>Kaufkurs</th>
+                                    <th>Aktueller Kurs</th>
+                                    <th>Wert</th>
+                                    <th>Performance</th>
+                                    <th>Aktionen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="position-name">
+                                            <strong>Allianz SE</strong>
+                                            <span class="text-sm text-secondary">DE0008404005</span>
+                                        </div>
+                                    </td>
+                                    <td>20</td>
+                                    <td>210,50 €</td>
+                                    <td>234,80 €</td>
+                                    <td>4.696,00 €</td>
+                                    <td class="text-accent">+11,55%</td>
+                                    <td>
+                                        <button class="action-btn" aria-label="Mehr Optionen">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <circle cx="8" cy="3" r="1.5" fill="currentColor"/>
+                                                <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+                                                <circle cx="8" cy="13" r="1.5" fill="currentColor"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="position-name">
+                                            <strong>BASF SE</strong>
+                                            <span class="text-sm text-secondary">DE000BASF111</span>
+                                        </div>
+                                    </td>
+                                    <td>50</td>
+                                    <td>48,20 €</td>
+                                    <td>45,60 €</td>
+                                    <td>2.280,00 €</td>
+                                    <td class="text-secondary">-5,39%</td>
+                                    <td>
+                                        <button class="action-btn" aria-label="Mehr Optionen">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <circle cx="8" cy="3" r="1.5" fill="currentColor"/>
+                                                <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+                                                <circle cx="8" cy="13" r="1.5" fill="currentColor"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="position-name">
+                                            <strong>Münchener Rück</strong>
+                                            <span class="text-sm text-secondary">DE0008430026</span>
+                                        </div>
+                                    </td>
+                                    <td>15</td>
+                                    <td>380,00 €</td>
+                                    <td>425,50 €</td>
+                                    <td>6.382,50 €</td>
+                                    <td class="text-accent">+11,97%</td>
+                                    <td>
+                                        <button class="action-btn" aria-label="Mehr Optionen">
+                                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                                <circle cx="8" cy="3" r="1.5" fill="currentColor"/>
+                                                <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+                                                <circle cx="8" cy="13" r="1.5" fill="currentColor"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2 class="cta-title">Starten Sie jetzt mit Ihrem Portfolio</h2>
+                    <p class="cta-text">Keine Anmeldung erforderlich - erstellen Sie Ihr erstes Portfolio in weniger als einer Minute.</p>
+                    <button class="btn btn-primary btn-lg">
+                        Portfolio erstellen
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Load header dynamically (in production this would be server-side)
+        fetch('ariva-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const header = doc.querySelector('.ariva-header');
+                document.getElementById('header-placeholder').appendChild(header);
+                
+                // Re-initialize header scripts
+                const script = document.createElement('script');
+                script.src = 'ariva-header.js';
+                document.body.appendChild(script);
+            });
+    </script>
+</body>
+</html>

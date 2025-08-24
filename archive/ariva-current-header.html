@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariva - Aktueller Header (1:1 Nachbau)</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #333;
+        }
+
+        /* Header Container */
+        .header-wrapper {
+            background: #003366;
+            border-bottom: 3px solid #cc0000;
+        }
+
+        /* Top Section with Logo and Meta Info */
+        .header-top {
+            background: #003366;
+            height: 90px;
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            background: white;
+            border-radius: 15px;
+            padding: 8px 20px;
+            margin-right: 30px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            font-size: 36px;
+            font-weight: bold;
+            font-style: italic;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .logo-ariva {
+            color: #003366;
+        }
+
+        .logo-de {
+            color: #cc0000;
+            font-size: 28px;
+        }
+
+        /* Euro/USD and Values */
+        .market-info {
+            color: white;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .market-value {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .market-change {
+            color: #ff6666;
+        }
+
+        /* Search Section */
+        .search-section {
+            flex: 1;
+            max-width: 400px;
+            margin: 0 30px;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 34px;
+            padding: 0 35px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+
+        .search-button {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 30px;
+            height: 30px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        /* Right Section */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .jetzt-traden {
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==') no-repeat center;
+            width: 120px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .login-help {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+            font-size: 11px;
+        }
+
+        .login-help a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .login-help a:hover {
+            text-decoration: underline;
+        }
+
+        .notification-icon {
+            position: relative;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #cc0000;
+            color: white;
+            font-size: 10px;
+            padding: 2px 4px;
+            border-radius: 10px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background: #f0f0f0;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            height: 40px;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Main Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .nav-item {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 13px;
+            font-weight: bold;
+            background: #f0f0f0;
+            border-right: 1px solid #ddd;
+            transition: background 0.2s;
+        }
+
+        .nav-link:hover {
+            background: #e0e0e0;
+        }
+
+        .nav-link.active {
+            background: white;
+            border-bottom: 3px solid white;
+        }
+
+        /* Special Navigation Items */
+        .nav-plus {
+            background: #90EE90;
+            color: #006600;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 0 20px;
+        }
+
+        .nav-forum {
+            background: #e0e0e0;
+            margin-right: 20px;
+        }
+
+        .nav-news {
+            background: #e0e0e0;
+            margin-right: 20px;
+        }
+
+        .nav-depot {
+            background: #cc0000;
+            color: white !important;
+            padding: 0 20px;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        /* Spotlight Bar */
+        .spotlight-bar {
+            background: #fffacd;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .spotlight-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .spotlight-label {
+            color: #cc0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .spotlight-text {
+            color: #333;
+        }
+
+        .anzeige {
+            margin-left: auto;
+            font-size: 10px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Wrapper -->
+    <div class="header-wrapper">
+        <!-- Top Section -->
+        <div class="header-top">
+            <div class="header-content">
+                <!-- Logo and Market Info -->
+                <div class="logo-section">
+                    <div class="logo">
+                        <a href="/">
+                            <span class="logo-ariva">ARIVA</span><span class="logo-de">.DE</span>
+                        </a>
+                    </div>
+                    <div class="market-info">
+                        <div>Euro/USD</div>
+                        <div class="market-value">0,12%</div>
+                        <div class="market-change">1,14105</div>
+                    </div>
+                </div>
+
+                <!-- Search -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Name / WKN / ISIN">
+                        <button class="search-button">
+                            <svg width="16" height="16" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Section -->
+                <div class="header-right">
+                    <div class="jetzt-traden">
+                        <!-- Trading Button Image -->
+                    </div>
+                    <div class="login-help">
+                        <a href="/login">Login</a>
+                        <div class="notification-icon">
+                            🔔
+                            <span class="notification-badge">1</span>
+                        </div>
+                        <a href="/help">❓</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <div class="nav-bar">
+            <div class="nav-content">
+                <nav class="main-nav">
+                    <div class="nav-item">
+                        <a href="/aktien" class="nav-link active">Aktien</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/fonds" class="nav-link">Fonds</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/etfs" class="nav-link">ETFs</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/zertifikate" class="nav-link">Zertifikate</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/hebelprodukte" class="nav-link">Hebelprodukte</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/anleihen" class="nav-link">Anleihen</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/devisen" class="nav-link">Devisen</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/krypto" class="nav-link">Krypto</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/rohstoffe" class="nav-link">Rohstoffe</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link nav-plus">+</a>
+                    </div>
+                </nav>
+
+                <div class="main-nav">
+                    <div class="nav-item">
+                        <a href="/forum" class="nav-link nav-forum">Forum</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/news" class="nav-link nav-news">News</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="/depot" class="nav-link nav-depot">Depot</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Spotlight Bar -->
+    <div class="spotlight-bar">
+        <div class="spotlight-content">
+            <span class="spotlight-label">+++ Spotlight +++</span>
+            <span class="spotlight-text">Die Welt unter Strom: Wie Kupfer zum strategisch wichtigsten Metall der Erde wurde</span>
+            <span class="anzeige">Anzeige</span>
+        </div>
+    </div>
+</body>
+</html>

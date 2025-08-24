@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariva Portal - Redesigned Header</title>
+    <link rel="stylesheet" href="ariva-redesign.css">
+    <link rel="stylesheet" href="ariva-header.css">
+    <script src="ariva-header.js" defer></script>
+</head>
+<body>
+    <!-- New Ariva Header with Two-Level Navigation -->
+    <header class="ariva-header">
+        <!-- Top Bar with Logo and User Actions -->
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <!-- Logo -->
+                    <div class="logo-wrapper">
+                        <a href="/" class="logo">
+                            <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <text x="0" y="30" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="var(--color-primary)">ARIVA</text>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Search with Chart Integration -->
+                    <div class="search-wrapper">
+                        <div class="search-container">
+                            <input type="text" class="search-input" placeholder="Aktie, ISIN, WKN suchen...">
+                            <button class="search-btn" aria-label="Suchen">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M19 19l-4.35-4.35M17 9A8 8 0 118 8 0 0117 9z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </button>
+                            <button class="chart-quick-btn" aria-label="Chart anzeigen">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M2 18V7l5 5 4-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Search Suggestions Dropdown -->
+                        <div class="search-suggestions" style="display: none;">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- User Actions -->
+                    <div class="user-actions">
+                        <a href="/watchlist" class="action-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 4l2.39 4.84L18 9.62l-4 3.9L15.22 19 10 16.19 4.78 19 6 13.52l-4-3.9 5.61-.78L10 4z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                            <span>Watchlist</span>
+                        </a>
+                        <a href="/portfolio-checker" class="action-link highlight">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 3h14a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V5a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            <span>Portfolio-Checker</span>
+                        </a>
+                        <button class="user-menu-btn" aria-label="Benutzermenü">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="10" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M5 16.5c0-2.5 2.5-4.5 5-4.5s5 2 5 4.5" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation (Level 1) -->
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-main">
+                    <li class="nav-item has-dropdown active">
+                        <a href="/markte" class="nav-link">
+                            Märkte
+                            <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12">
+                                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                        <!-- Level 2 Dropdown -->
+                        <div class="nav-dropdown">
+                            <div class="dropdown-grid">
+                                <a href="/aktien" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">📈</span>
+                                    <span>Aktien</span>
+                                </a>
+                                <a href="/anleihen" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">📊</span>
+                                    <span>Anleihen</span>
+                                </a>
+                                <a href="/devisen" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">💱</span>
+                                    <span>Devisen</span>
+                                </a>
+                                <a href="/rohstoffe" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">⚡</span>
+                                    <span>Rohstoffe</span>
+                                </a>
+                                <a href="/fonds" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">🏦</span>
+                                    <span>Fonds</span>
+                                </a>
+                                <a href="/etfs" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">📋</span>
+                                    <span>ETFs</span>
+                                </a>
+                                <a href="/zertifikate" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">📜</span>
+                                    <span>Zertifikate</span>
+                                </a>
+                                <a href="/krypto" class="dropdown-item">
+                                    <span class="dropdown-icon-wrapper">₿</span>
+                                    <span>Krypto</span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/news" class="nav-link">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/analysen" class="nav-link">Analysen</a>
+                    </li>
+                    <li class="nav-item has-dropdown">
+                        <a href="/tools" class="nav-link">
+                            Tools
+                            <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12">
+                                <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                        <div class="nav-dropdown">
+                            <a href="/chart-tool" class="dropdown-item">Chart-Analyse</a>
+                            <a href="/portfolio-checker" class="dropdown-item">Portfolio-Checker</a>
+                            <a href="/rechner" class="dropdown-item">Finanzrechner</a>
+                            <a href="/kalender" class="dropdown-item">Wirtschaftskalender</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/forum" class="nav-link">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/wissen" class="nav-link">Wissen</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Example Content Area -->
+    <main class="main-content">
+        <div class="container">
+            <div class="mt-xl">
+                <h1 class="text-3xl mb-lg">Willkommen bei Ariva</h1>
+                <p class="text-lg text-secondary mb-xl">Das neue Design bringt mehr Übersicht und moderne Funktionen.</p>
+                
+                <!-- Example Cards -->
+                <div class="grid grid-cols-3 mb-xl">
+                    <div class="card">
+                        <h3 class="text-xl mb-md">Moderneres Design</h3>
+                        <p class="text-secondary">Mehr Weißraum und klarere Struktur für bessere Übersicht.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl mb-md">Portfolio-Checker</h3>
+                        <p class="text-secondary">Ehemals "Depot" - jetzt klarer benannt ohne Verwechslungsgefahr.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-xl mb-md">Integrierte Charts</h3>
+                        <p class="text-secondary">Schneller Zugriff auf Charts direkt aus der Suche.</p>
+                    </div>
+                </div>
+
+                <!-- Example Table -->
+                <div class="surface">
+                    <h2 class="text-2xl mb-lg">Top Aktien heute</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ISIN</th>
+                                <th>Kurs</th>
+                                <th>Änderung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SAP SE</td>
+                                <td>DE0007164600</td>
+                                <td>142,50 €</td>
+                                <td class="text-accent">+2,34%</td>
+                            </tr>
+                            <tr>
+                                <td>Siemens AG</td>
+                                <td>DE0007236101</td>
+                                <td>168,25 €</td>
+                                <td class="text-accent">+1,89%</td>
+                            </tr>
+                            <tr>
+                                <td>Deutsche Bank AG</td>
+                                <td>DE0005140008</td>
+                                <td>12,45 €</td>
+                                <td class="text-secondary">-0,45%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

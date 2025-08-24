@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariva - Verbesserter Header Design</title>
+    <style>
+        /* Reset und Basis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            font-size: 14px;
+            color: #212121;
+            background: #f5f5f5;
+        }
+
+        /* VERBESSERTER HEADER */
+        .header-improved {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* EBENE 1 - Top Bar (Mehr Weißraum) */
+        .header-top-improved {
+            background: white;
+            height: 70px; /* Erhöht von ~40px */
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content-improved {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px; /* Mehr seitlicher Abstand */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px; /* Mehr Abstand zwischen Elementen */
+        }
+
+        /* Logo Modernisiert */
+        .logo-improved {
+            display: flex;
+            align-items: baseline;
+            text-decoration: none;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-ariva-improved {
+            color: #0D47A1; /* Moderneres Blau */
+        }
+
+        .logo-de-improved {
+            color: #C62828; /* Moderneres Rot */
+            font-size: 28px;
+            margin-left: 2px;
+        }
+
+        /* Suchleiste Verbessert */
+        .search-section-improved {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .search-container-improved {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-input-improved {
+            width: 100%;
+            height: 48px; /* Größer für bessere Touch-Targets */
+            padding: 0 120px 0 24px;
+            border: none;
+            background: #F5F5F5;
+            border-radius: 24px; /* Vollständig gerundet */
+            font-size: 15px;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .search-input-improved:focus {
+            background: #EEEEEE;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+
+        .search-buttons-improved {
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .search-btn-improved, .chart-btn-improved {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .search-btn-improved:hover, .chart-btn-improved:hover {
+            background: rgba(0,0,0,0.05);
+        }
+
+        .divider-improved {
+            width: 1px;
+            height: 24px;
+            background: #E0E0E0;
+        }
+
+        /* Chart Button NEU */
+        .chart-btn-improved {
+            color: #C62828;
+        }
+
+        /* User Actions Modernisiert */
+        .user-actions-improved {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .login-btn-improved {
+            padding: 10px 24px;
+            background: none;
+            border: 1px solid #E0E0E0;
+            border-radius: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .login-btn-improved:hover {
+            background: #F5F5F5;
+            border-color: #0D47A1;
+            color: #0D47A1;
+        }
+
+        .icon-btn-improved {
+            width: 44px;
+            height: 44px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            transition: all 0.2s ease;
+            color: #757575;
+        }
+
+        .icon-btn-improved:hover {
+            background: #F5F5F5;
+            color: #0D47A1;
+        }
+
+        .notification-dot {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 8px;
+            height: 8px;
+            background: #C62828;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* EBENE 2 - Navigation (Zweistufig) */
+        .nav-improved {
+            background: #0D47A1;
+            height: 56px; /* Mehr Höhe */
+        }
+
+        .nav-content-improved {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Hauptnavigation */
+        .main-nav-improved {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            gap: 8px; /* Abstand zwischen Items */
+        }
+
+        .nav-item-improved {
+            height: 100%;
+            position: relative;
+        }
+
+        .nav-link-improved {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link-improved:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .nav-link-improved.has-dropdown::after {
+            content: '▼';
+            font-size: 10px;
+            margin-left: 6px;
+            transition: transform 0.2s ease;
+        }
+
+        /* Dropdown Menü für Märkte */
+        .dropdown-improved {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 360px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            padding: 16px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 1100;
+        }
+
+        .nav-item-improved:hover .dropdown-improved {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-grid-improved {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+
+        .dropdown-item-improved {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            color: #212121;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-size: 15px;
+        }
+
+        .dropdown-item-improved:hover {
+            background: #F5F5F5;
+            color: #0D47A1;
+        }
+
+        .dropdown-icon {
+            font-size: 20px;
+            width: 28px;
+            text-align: center;
+        }
+
+        /* Rechte Seite Navigation */
+        .nav-right-improved {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        /* Portfolio-Checker Button (vormals Depot) */
+        .portfolio-checker-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: #C62828;
+            color: white;
+            text-decoration: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .portfolio-checker-btn:hover {
+            background: #B71C1C;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+        }
+
+        /* Forum & News Links */
+        .nav-secondary-link {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-secondary-link:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Kurse Ticker (Optional) */
+        .market-ticker-improved {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+
+        .ticker-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ticker-value {
+            color: white;
+            font-weight: 600;
+        }
+
+        .ticker-change-positive {
+            color: #4CAF50;
+        }
+
+        .ticker-change-negative {
+            color: #FF5252;
+        }
+
+        /* Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            margin-top: 126px;
+            padding: 40px;
+        }
+
+        .comparison {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .improvements {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 24px;
+        }
+
+        .improvements h2 {
+            color: #0D47A1;
+            margin-bottom: 16px;
+        }
+
+        .improvements ul {
+            line-height: 1.8;
+            color: #616161;
+        }
+
+        .improvements li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #FFF3E0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- VERBESSERTER HEADER -->
+    <header class="header-improved">
+        <!-- EBENE 1: Top Bar mit mehr Weißraum -->
+        <div class="header-top-improved">
+            <div class="header-content-improved">
+                <!-- Logo -->
+                <a href="/" class="logo-improved">
+                    <span class="logo-ariva-improved">ARIVA</span>
+                    <span class="logo-de-improved">.DE</span>
+                </a>
+
+                <!-- Verbesserte Suchleiste mit Chart-Button -->
+                <div class="search-section-improved">
+                    <div class="search-container-improved">
+                        <input type="text" class="search-input-improved" placeholder="Name / WKN / ISIN eingeben...">
+                        <div class="search-buttons-improved">
+                            <button class="search-btn-improved" aria-label="Suchen">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="m21 21-4.35-4.35"></path>
+                                </svg>
+                            </button>
+                            <div class="divider-improved"></div>
+                            <button class="chart-btn-improved" aria-label="Chart anzeigen">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3v18h18"></path>
+                                    <path d="m7 16 4-4 4 4 6-6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="user-actions-improved">
+                    <button class="login-btn-improved">Login</button>
+                    <button class="icon-btn-improved" aria-label="Benachrichtigungen">
+                        <span class="notification-dot"></span>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn-improved" aria-label="Hilfe">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- EBENE 2: Navigation mit Dropdown -->
+        <nav class="nav-improved">
+            <div class="nav-content-improved">
+                <!-- Hauptnavigation Links -->
+                <div class="main-nav-improved">
+                    <div class="nav-item-improved">
+                        <a href="#" class="nav-link-improved has-dropdown">Märkte</a>
+                        <div class="dropdown-improved">
+                            <div class="dropdown-grid-improved">
+                                <a href="/aktien" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">📈</span>
+                                    <span>Aktien</span>
+                                </a>
+                                <a href="/fonds" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">💰</span>
+                                    <span>Fonds</span>
+                                </a>
+                                <a href="/etfs" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">📊</span>
+                                    <span>ETFs</span>
+                                </a>
+                                <a href="/zertifikate" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">📜</span>
+                                    <span>Zertifikate</span>
+                                </a>
+                                <a href="/hebelprodukte" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">🏛️</span>
+                                    <span>Hebelprodukte</span>
+                                </a>
+                                <a href="/anleihen" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">📉</span>
+                                    <span>Anleihen</span>
+                                </a>
+                                <a href="/devisen" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">💱</span>
+                                    <span>Devisen</span>
+                                </a>
+                                <a href="/krypto" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">₿</span>
+                                    <span>Krypto</span>
+                                </a>
+                                <a href="/rohstoffe" class="dropdown-item-improved">
+                                    <span class="dropdown-icon">⚡</span>
+                                    <span>Rohstoffe</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item-improved">
+                        <a href="/news" class="nav-link-improved">News</a>
+                    </div>
+                    <div class="nav-item-improved">
+                        <a href="/analysen" class="nav-link-improved">Analysen</a>
+                    </div>
+                    <div class="nav-item-improved">
+                        <a href="/tools" class="nav-link-improved has-dropdown">Tools</a>
+                    </div>
+                    <div class="nav-item-improved">
+                        <a href="/forum" class="nav-link-improved">Forum</a>
+                    </div>
+                    <div class="nav-item-improved">
+                        <a href="/wissen" class="nav-link-improved">Wissen</a>
+                    </div>
+                </div>
+
+                <!-- Rechte Seite mit Kursen und Portfolio-Checker -->
+                <div class="nav-right-improved">
+                    <!-- Optional: Kurse Ticker -->
+                    <div class="market-ticker-improved">
+                        <div class="ticker-item">
+                            <span>EUR/USD</span>
+                            <span class="ticker-value">1,0812</span>
+                            <span class="ticker-change-negative">-0,12%</span>
+                        </div>
+                        <div class="ticker-item">
+                            <span>DAX</span>
+                            <span class="ticker-value">18.417</span>
+                            <span class="ticker-change-positive">+0,34%</span>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio-Checker Button -->
+                    <a href="/portfolio-checker" class="portfolio-checker-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        Portfolio-Checker
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <div class="comparison">
+            <h1 style="color: #0D47A1; text-align: center; margin-bottom: 32px;">Ariva Header - Verbessertes Design</h1>
+            
+            <div class="improvements">
+                <h2>Verbesserungen gegenüber dem aktuellen Design:</h2>
+                <ul>
+                    <li><span class="highlight">Mehr Weißraum:</span> Header-Höhe von ~90px auf 126px (70px + 56px) erhöht</li>
+                    <li><span class="highlight">Modernere Farben:</span> Dunkelblau #0D47A1 statt #003366, Rot #C62828 statt #CC0000</li>
+                    <li><span class="highlight">Zweistufige Navigation:</span> Asset-Klassen in Dropdown-Menü verschoben</li>
+                    <li><span class="highlight">Chart-Integration:</span> Neuer Chart-Button direkt in der Suchleiste</li>
+                    <li><span class="highlight">Portfolio-Checker:</span> "Depot" umbenannt und prominenter platziert</li>
+                    <li><span class="highlight">Moderne Suchleiste:</span> Vollständig gerundet mit 48px Höhe</li>
+                    <li><span class="highlight">Bessere Typografie:</span> System-Fonts und größere Schriftgrößen (16px Navigation)</li>
+                    <li><span class="highlight">Hover-Effekte:</span> Sanfte Übergänge und moderne Interaktionen</li>
+                    <li><span class="highlight">Aufgeräumte Struktur:</span> Klarere Trennung zwischen Funktionsbereichen</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIVA.DE - Header Redesign Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .comparison-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1e3a5f;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .comparison-section {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .section-header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .old-design .section-header {
+            background-color: #003d6b;
+            color: white;
+        }
+        
+        .new-design .section-header {
+            background-color: #1e3a5f;
+            color: white;
+        }
+        
+        .iframe-container {
+            width: 100%;
+            height: 200px;
+            border: none;
+            display: block;
+        }
+        
+        .features-comparison {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .features-comparison h2 {
+            color: #1e3a5f;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-align: center;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            padding: 20px;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        
+        .feature-item h3 {
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .feature-item p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .check-icon {
+            color: #10b981;
+            font-size: 20px;
+        }
+        
+        .benefits-list {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f0fdf4;
+            border-radius: 12px;
+            border: 1px solid #86efac;
+        }
+        
+        .benefits-list h3 {
+            color: #166534;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .benefits-list ul {
+            list-style: none;
+        }
+        
+        .benefits-list li {
+            padding: 10px 0;
+            color: #166534;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="comparison-container">
+        <h1>ARIVA.DE Header Redesign - Vorher/Nachher Vergleich</h1>
+        
+        <div class="comparison-grid">
+            <div class="comparison-section old-design">
+                <div class="section-header">Aktuelles Design</div>
+                <iframe src="ariva-header-recreation.html" class="iframe-container"></iframe>
+            </div>
+            
+            <div class="comparison-section new-design">
+                <div class="section-header">Neues Design</div>
+                <iframe src="ariva-redesign.html" class="iframe-container"></iframe>
+            </div>
+        </div>
+        
+        <div class="features-comparison">
+            <h2>Key Improvements im neuen Design</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3><span class="check-icon">✓</span> Mehr Weißraum</h3>
+                    <p>Luftigeres Design mit größeren Abständen zwischen Elementen für bessere Übersichtlichkeit und moderne Optik.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="check-icon">✓</span> Zweistufige Navigation</h3>
+                    <p>Asset-Klassen in separater Ebene für mehr Platz für neue Services und bessere Struktur.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="check-icon">✓</span> Integrierte Chart-Funktion</h3>
+                    <p>Chart-Toggle direkt in der Suche integriert - wie bei TradingView für schnellen Zugriff.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="check-icon">✓</span> Portfolio-Checker</h3>
+                    <p>"Depot" umbenannt zu "Portfolio-Checker" - klarer und weniger abschreckend für Nutzer.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="check-icon">✓</span> Moderne Farbgebung</h3>
+                    <p>Frischeres Blau (#1e3a5f) und helleres Rot (#e53e3e) bei Beibehaltung der Markenidentität.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <h3><span class="check-icon">✓</span> Responsive Design</h3>
+                    <p>Mobile-First Ansatz mit optimierter Navigation für alle Bildschirmgrößen.</p>
+                </div>
+            </div>
+            
+            <div class="benefits-list">
+                <h3>Vorteile für Stakeholder</h3>
+                <ul>
+                    <li>Moderneres Erscheinungsbild steigert Nutzervertrauen und Professionalität</li>
+                    <li>Verbesserte User Experience führt zu höherer Nutzerbindung</li>
+                    <li>Flexibles Design-System ermöglicht einfache zukünftige Anpassungen</li>
+                    <li>CSS-Variablen für schnelle Farbänderungen ohne Code-Anpassungen</li>
+                    <li>Platz für neue Services und Features ohne Überladung</li>
+                    <li>Bessere mobile Nutzung erschließt größere Zielgruppe</li>
+                    <li>Schrittweise Migration möglich - kein Big Bang nötig</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

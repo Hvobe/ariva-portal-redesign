@@ -1,0 +1,10 @@
+<svg width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background with rounded corners -->
+  <rect x="0" y="0" width="140" height="40" rx="8" ry="8" fill="white"/>
+  
+  <!-- ARIVA text in dark blue -->
+  <text x="20" y="28" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#00426e">ARIVA</text>
+  
+  <!-- .DE text in red -->
+  <text x="90" y="28" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ff0000">.DE</text>
+</svg>

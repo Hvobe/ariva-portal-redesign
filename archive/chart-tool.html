@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart-Tool - Ariva Portal</title>
+    <link rel="stylesheet" href="ariva-redesign.css">
+    <link rel="stylesheet" href="ariva-header.css">
+    <link rel="stylesheet" href="chart-tool.css">
+    <script src="ariva-header.js" defer></script>
+</head>
+<body>
+    <!-- Include Header (in production this would be a server-side include) -->
+    <div id="header-placeholder"></div>
+
+    <!-- Chart Tool Main Content -->
+    <main class="chart-tool-main">
+        <div class="chart-container-full">
+            <!-- Chart Header -->
+            <div class="chart-header">
+                <div class="chart-title-section">
+                    <div class="symbol-selector">
+                        <input type="text" class="symbol-input" placeholder="Symbol eingeben..." value="SAP SE">
+                        <button class="symbol-search-btn">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M19 19l-4.35-4.35M17 9A8 8 0 118 8 0 0017 9z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="chart-info">
+                        <h1 class="chart-symbol">SAP SE</h1>
+                        <span class="chart-isin">DE0007164600</span>
+                    </div>
+                    <div class="chart-price">
+                        <span class="current-price">142,50 €</span>
+                        <span class="price-change positive">+3,25 (+2,34%)</span>
+                    </div>
+                </div>
+                
+                <!-- Chart Controls -->
+                <div class="chart-controls">
+                    <div class="time-range-selector">
+                        <button class="time-btn">1T</button>
+                        <button class="time-btn">1W</button>
+                        <button class="time-btn active">1M</button>
+                        <button class="time-btn">3M</button>
+                        <button class="time-btn">6M</button>
+                        <button class="time-btn">1J</button>
+                        <button class="time-btn">5J</button>
+                        <button class="time-btn">Max</button>
+                    </div>
+                    
+                    <div class="chart-type-selector">
+                        <button class="chart-type-btn active" title="Linienchart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M2 18V7l5 5 4-7 7 7" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="chart-type-btn" title="Kerzenchart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <rect x="4" y="6" width="3" height="8" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="9" y="4" width="3" height="12" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="14" y="8" width="3" height="6" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </button>
+                        <button class="chart-type-btn" title="Balkenchart">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <rect x="3" y="10" width="3" height="8" fill="currentColor"/>
+                                <rect x="8" y="6" width="3" height="12" fill="currentColor"/>
+                                <rect x="13" y="4" width="3" height="14" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="chart-tools">
+                        <button class="tool-btn" title="Indikatoren">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M2 10h16M10 2v16" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="tool-btn" title="Zeichenwerkzeuge">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 17l14-14m0 0h-6m6 0v6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="tool-btn" title="Vergleichen">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 10l3-3v6l-3-3zm0 0h12m-7-3l3 3-3 3v-6z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="tool-btn" title="Vollbild">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 5h4m6 0h0m0 10h0m-10 0h4M5 5v4m10-4v4m0 6v4m-10-4v0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chart Canvas Area -->
+            <div class="chart-canvas-wrapper">
+                <div class="chart-canvas">
+                    <!-- Placeholder for actual chart implementation -->
+                    <svg class="chart-svg" viewBox="0 0 800 400" preserveAspectRatio="none">
+                        <!-- Grid -->
+                        <g class="chart-grid">
+                            <line x1="0" y1="100" x2="800" y2="100" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="0" y1="200" x2="800" y2="200" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="0" y1="300" x2="800" y2="300" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="200" y1="0" x2="200" y2="400" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="400" y1="0" x2="400" y2="400" stroke="#e0e0e0" stroke-width="1"/>
+                            <line x1="600" y1="0" x2="600" y2="400" stroke="#e0e0e0" stroke-width="1"/>
+                        </g>
+                        
+                        <!-- Sample Chart Line -->
+                        <path d="M0,350 L50,330 L100,340 L150,310 L200,280 L250,260 L300,240 L350,220 L400,210 L450,190 L500,180 L550,160 L600,150 L650,140 L700,120 L750,110 L800,100" 
+                              stroke="#0d47a1" 
+                              stroke-width="2" 
+                              fill="none"/>
+                        
+                        <!-- Area under line -->
+                        <path d="M0,350 L50,330 L100,340 L150,310 L200,280 L250,260 L300,240 L350,220 L400,210 L450,190 L500,180 L550,160 L600,150 L650,140 L700,120 L750,110 L800,100 L800,400 L0,400 Z" 
+                              fill="url(#chartGradient)" 
+                              opacity="0.1"/>
+                        
+                        <defs>
+                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0d47a1;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#0d47a1;stop-opacity:0" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                
+                <!-- Y-Axis -->
+                <div class="chart-y-axis">
+                    <div class="y-axis-label">150,00</div>
+                    <div class="y-axis-label">145,00</div>
+                    <div class="y-axis-label">140,00</div>
+                    <div class="y-axis-label">135,00</div>
+                    <div class="y-axis-label">130,00</div>
+                </div>
+                
+                <!-- X-Axis -->
+                <div class="chart-x-axis">
+                    <div class="x-axis-label">01.07</div>
+                    <div class="x-axis-label">08.07</div>
+                    <div class="x-axis-label">15.07</div>
+                    <div class="x-axis-label">22.07</div>
+                    <div class="x-axis-label">29.07</div>
+                </div>
+            </div>
+
+            <!-- Chart Info Panel -->
+            <div class="chart-info-panel">
+                <div class="info-tabs">
+                    <button class="info-tab active">Übersicht</button>
+                    <button class="info-tab">Kennzahlen</button>
+                    <button class="info-tab">Nachrichten</button>
+                    <button class="info-tab">Analysen</button>
+                </div>
+                
+                <div class="info-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Tagesspanne</span>
+                            <span class="info-value">139,25 - 142,80 €</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">52W Spanne</span>
+                            <span class="info-value">98,50 - 145,60 €</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Volumen</span>
+                            <span class="info-value">1.234.567</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Marktkapitalisierung</span>
+                            <span class="info-value">165,8 Mrd. €</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">KGV</span>
+                            <span class="info-value">24,5</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Dividendenrendite</span>
+                            <span class="info-value">1,45%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Load header dynamically
+        fetch('ariva-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                const header = doc.querySelector('.ariva-header');
+                document.getElementById('header-placeholder').appendChild(header);
+                
+                const script = document.createElement('script');
+                script.src = 'ariva-header.js';
+                document.body.appendChild(script);
+            });
+
+        // Chart Tool Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Time range selector
+            const timeButtons = document.querySelectorAll('.time-btn');
+            timeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    timeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Chart type selector
+            const chartTypeButtons = document.querySelectorAll('.chart-type-btn');
+            chartTypeButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    chartTypeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Info tabs
+            const infoTabs = document.querySelectorAll('.info-tab');
+            infoTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    infoTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
