@@ -109,6 +109,23 @@
                             <a href="#" class="service-link portfolio">Portfolio-Tracker</a>
                         </nav>
 
+                        <!-- Quick Actions Bar -->
+                        <div class="quick-actions">
+                            <button class="quick-action-btn watchlist">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <span class="action-badge">5</span>
+                            </button>
+                            <button class="quick-action-btn market-overview">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        
                         <!-- User Controls -->
                         <div class="user-controls">
                             <button class="icon-button notification">
@@ -380,6 +397,55 @@
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.search-section')) {
                 searchResults.style.display = 'none';
+            }
+        });
+        
+        // Keyboard shortcut for search (/)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+                const activeElement = document.activeElement;
+                if (activeElement.tagName !== 'INPUT' && activeElement.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+            }
+            // ESC to close search
+            if (e.key === 'Escape') {
+                searchResults.style.display = 'none';
+                searchInput.blur();
+            }
+        });
+        
+        // Save recent searches
+        let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+        
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && this.value.trim()) {
+                // Save to recent searches
+                const query = this.value.trim();
+                recentSearches = [query, ...recentSearches.filter(s => s !== query)].slice(0, 5);
+                localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+            }
+        });
+        
+        // Show recent searches on focus
+        searchInput.addEventListener('focus', function() {
+            if (!this.value && recentSearches.length > 0) {
+                searchResults.innerHTML = `
+                    <div class="search-recent">
+                        <div class="search-recent-header">Zuletzt gesucht</div>
+                        ${recentSearches.map(search => `
+                            <div class="search-recent-item" onclick="document.getElementById('search-input').value='${search}'; document.getElementById('search-input').dispatchEvent(new Event('input'));">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                ${search}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                searchResults.style.display = 'block';
             }
         });
         
