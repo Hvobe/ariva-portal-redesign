@@ -7,6 +7,10 @@
     --color-accent: #e53e3e;
     --color-accent-hover: #c53030;
     
+    /* Status Colors */
+    --color-positive: #10b981;
+    --color-negative: #ef4444;
+    
     /* Neutral Colors */
     --color-background: #ffffff;
     --color-surface: #f8f9fa;
