@@ -70,7 +70,7 @@ body {
 
 /* Market Ticker Bar - Very Subtle */
 .market-ticker {
-    background: #fafafa;  /* Very light gray background */
+    background: #ffffff;  /* White background */
     border-bottom: 1px solid #f0f0f0;
     height: 26px;
     display: flex;
@@ -409,8 +409,9 @@ body {
 }
 
 .asset-link.active {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);  /* Darker blue for active state */
     border-bottom-color: var(--color-primary);
+    font-weight: 600;
 }
 
 .more-assets {
