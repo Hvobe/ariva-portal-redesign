@@ -68,7 +68,54 @@ body {
     padding: 0 var(--spacing-lg);
 }
 
-/* Mini Ticker in Header */
+/* Market Ticker Bar - Very Subtle */
+.market-ticker {
+    background: #fafafa;  /* Very light gray background */
+    border-bottom: 1px solid #f0f0f0;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+}
+
+.ticker-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    gap: 24px;
+}
+
+.market-ticker .ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.market-ticker .ticker-name {
+    color: #666;  /* Gray text */
+    font-weight: 500;
+}
+
+.market-ticker .ticker-value {
+    color: #333;  /* Dark gray */
+    font-weight: 600;
+}
+
+.market-ticker .ticker-change {
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.market-ticker .ticker-change.positive {
+    color: var(--color-positive);
+}
+
+.market-ticker .ticker-change.negative {
+    color: var(--color-negative);
+}
+
+/* Mini Ticker in Header - Not used anymore */
 .mini-ticker {
     display: flex;
     align-items: center;
@@ -110,7 +157,7 @@ body {
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
     position: sticky;
-    top: 0; /* No ticker bar above anymore */
+    top: 26px; /* Account for ticker bar */
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -118,7 +165,7 @@ body {
 /* Level 1: Primary Header */
 .header-primary {
     border-bottom: 1px solid var(--color-border);
-    padding: 20px 0;  /* Increased from 16px for more whitespace */
+    padding: 14px 0;  /* Reduced for more compact header */
 }
 
 .header-content {
@@ -161,7 +208,8 @@ body {
     align-items: center;
     background: var(--color-surface);
     border-radius: var(--radius-full);
-    padding: 10px var(--spacing-md);  /* Increased vertical padding */
+    padding: 6px var(--spacing-md);  /* Reduced vertical padding */
+    height: 38px;  /* Fixed height to match login button */
     transition: all var(--transition-base);
 }
 
@@ -346,10 +394,10 @@ body {
 .asset-link {
     display: block;
     text-decoration: none;
-    color: var(--color-text-primary);
+    color: var(--color-primary);  /* Changed to Ariva blue */
     font-size: var(--font-size-base);  /* Changed from sm to base (15px) */
     font-weight: 500;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: 12px var(--spacing-lg);  /* Reduced vertical padding */
     white-space: nowrap;
     transition: all var(--transition-base);
     border-bottom: 2px solid transparent;
