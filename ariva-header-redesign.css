@@ -94,6 +94,10 @@ body {
     scrollbar-width: none;
 }
 
+.ticker-wrapper .ticker-item:first-child {
+    margin-left: -2px; /* Linksbündig mit Logo ausrichten */
+}
+
 .ticker-wrapper::-webkit-scrollbar {
     display: none;
 }
