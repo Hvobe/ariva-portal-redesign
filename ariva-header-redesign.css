@@ -223,6 +223,11 @@ body {
     position: relative;
 }
 
+/* Mobile search button - hidden by default */
+.search-icon-mobile {
+    display: none;
+}
+
 .search-container {
     position: relative;
     display: flex;
@@ -907,6 +912,25 @@ body.mobile-menu-open .mobile-menu {
     }
 }
 
+@media (max-width: 480px) {
+    .logo-img {
+        height: 24px; /* Even smaller for very small screens */
+    }
+    
+    .header-primary {
+        padding: 10px 0; /* Less padding */
+    }
+    
+    .container {
+        padding: 0 12px; /* Less horizontal padding */
+    }
+    
+    /* Hide notification badge on very small screens */
+    .icon-button.notification {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     /* Hide secondary navigation on mobile */
     .header-secondary {
@@ -920,22 +944,44 @@ body.mobile-menu-open .mobile-menu {
     
     .header-content {
         gap: var(--spacing-sm);
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Prevent wrapping */
     }
     
     .logo-img {
-        height: 30px;
+        height: 28px; /* Smaller logo */
     }
     
+    /* Hide full search on mobile, show icon only */
     .search-section {
-        order: 2;
-        flex: 1 1 auto;
-        min-width: 0;
-        margin-right: var(--spacing-sm);
+        flex: 0 0 auto;
+        min-width: auto;
     }
     
     .search-container {
-        padding: var(--spacing-xs) var(--spacing-sm);
+        display: none; /* Hide full search bar */
+    }
+    
+    /* Mobile search button */
+    .search-icon-mobile {
+        display: block;
+        background: none;
+        border: none;
+        padding: var(--spacing-sm);
+        cursor: pointer;
+        color: var(--color-text-primary);
+    }
+    
+    /* Search overlay for mobile */
+    .search-container.mobile-active {
+        display: flex;
+        position: fixed;
+        top: 60px;
+        left: var(--spacing-md);
+        right: var(--spacing-md);
+        z-index: 1500;
+        background: white;
+        box-shadow: var(--shadow-lg);
+        border-radius: var(--radius-md);
     }
     
     .search-input {
