@@ -420,7 +420,7 @@ body {
     color: #4a5568;  /* Dunkelgrau statt Blau */
     font-size: var(--font-size-base);
     font-weight: 500;
-    padding: 10px 20px;
+    padding: 10px 16px;
     white-space: nowrap;
     transition: all var(--transition-base);
     border-bottom: 2px solid transparent;
@@ -439,7 +439,7 @@ body {
 
 /* Dropdown arrow */
 .dropdown-arrow {
-    font-size: 10px;
+    font-size: 8px;
     margin-left: 4px;
     transition: transform var(--transition-base);
     display: inline-block;
@@ -467,13 +467,13 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background: #e8f2f7;  /* Sehr helles Blau */
+    background: #f8fafb;  /* Noch hellerer Hintergrund */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 200ms ease;
     z-index: var(--z-dropdown);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .has-asset-menu:hover ~ .asset-bar,
