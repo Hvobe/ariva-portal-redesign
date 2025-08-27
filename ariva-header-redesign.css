@@ -89,6 +89,7 @@ body {
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
     display: flex;
+    align-items: center;
     overflow-x: auto;
     scrollbar-width: none;
 }
@@ -107,7 +108,7 @@ body {
 }
 
 .market-ticker .ticker-item:first-child {
-    margin-left: 0;
+    margin-left: -1px; /* Kleine Korrektur nach links für perfekte Ausrichtung */
 }
 
 .market-ticker .ticker-name {
