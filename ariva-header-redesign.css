@@ -413,7 +413,6 @@ body {
 
 .main-nav li:first-child .main-nav-link {
     padding-left: 0;
-    margin-left: -2px; /* Kleine Korrektur für perfekte Ausrichtung */
 }
 
 .main-nav-link {
@@ -496,7 +495,6 @@ body {
 
 .asset-nav li:first-child .asset-link {
     padding-left: 0;
-    margin-left: -2px; /* Kleine Korrektur für perfekte Ausrichtung */
 }
 
 .asset-link {
