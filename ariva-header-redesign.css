@@ -45,6 +45,12 @@
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
     --transition-base: 150ms ease-in-out;
+    
+    /* Z-index layers */
+    --z-dropdown: 1000;
+    --z-dropdown-level3: 1001;
+    --z-sticky: 1020;
+    --z-modal: 1050;
 }
 
 * {
@@ -83,21 +89,30 @@ body {
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
     display: flex;
-    gap: 24px;
+    gap: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.ticker-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .market-ticker .ticker-item {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .market-ticker .ticker-name {
+    display: inline-block;
     color: #666;  /* Gray text */
     font-weight: 500;
 }
 
 .market-ticker .ticker-value {
+    display: inline-block;
     color: #333;  /* Dark gray */
     font-weight: 600;
 }
@@ -368,12 +383,13 @@ body {
     color: var(--color-text-primary);
 }
 
-/* Level 2: Secondary Navigation */
+/* Level 2: Main Navigation */
 .header-secondary {
-    background: var(--color-surface);
+    background: white;
     padding: 0;
     overflow: visible;
     position: relative;
+    border-bottom: 1px solid var(--color-border);
 }
 
 .header-secondary .container {
@@ -382,37 +398,119 @@ body {
     gap: var(--spacing-md);
 }
 
-.asset-nav {
+/* Main navigation (Märkte, News & Analysen, etc.) */
+.main-nav {
     display: flex;
     list-style: none;
-    gap: var(--spacing-xs);
+    gap: 0;
     flex: 1;
     overflow: visible;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-.asset-link {
+.main-nav-link {
     display: block;
     text-decoration: none;
-    color: var(--color-primary);  /* Changed to Ariva blue */
-    font-size: var(--font-size-base);  /* Changed from sm to base (15px) */
+    color: #4a5568;  /* Dunkelgrau statt Blau */
+    font-size: var(--font-size-base);
     font-weight: 500;
-    padding: 12px var(--spacing-lg);  /* Reduced vertical padding */
+    padding: 10px 20px;
     white-space: nowrap;
     transition: all var(--transition-base);
     border-bottom: 2px solid transparent;
 }
 
-.asset-link:hover {
+.main-nav-link:hover {
     color: var(--color-primary);
-    background: var(--color-background);
+    background: #f7f8fa;
 }
 
-.asset-link.active {
-    color: var(--color-primary-dark);  /* Darker blue for active state */
+.main-nav-link.active {
+    color: var(--color-primary-dark);
     border-bottom-color: var(--color-primary);
     font-weight: 600;
 }
+
+/* Dropdown arrow */
+.dropdown-arrow {
+    font-size: 10px;
+    margin-left: 4px;
+    transition: transform var(--transition-base);
+    display: inline-block;
+}
+
+.has-asset-menu:hover .dropdown-arrow,
+.has-asset-menu.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Active state when asset bar is visible */
+.has-asset-menu.active .main-nav-link {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Has asset menu - for Märkte link */
+.has-asset-menu {
+    position: relative;
+}
+
+/* Asset Bar (appears on hover) */
+.asset-bar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #e8f2f7;  /* Sehr helles Blau */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 200ms ease;
+    z-index: var(--z-dropdown);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.has-asset-menu:hover ~ .asset-bar,
+.asset-bar:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Asset navigation (Aktien, ETFs, etc.) */
+.asset-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.asset-link {
+    display: block;
+    text-decoration: none;
+    color: #4a5568;  /* Dunkelgrau */
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: 10px 16px;
+    white-space: nowrap;
+    transition: all var(--transition-base);
+    position: relative;
+    border-bottom: 2px solid transparent;
+}
+
+.asset-link:hover {
+    color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.5);
+    border-bottom-color: var(--color-primary);
+}
+
+.asset-nav .has-dropdown {
+    position: relative;
+}
+
 
 .more-assets {
     flex-shrink: 0;
@@ -430,25 +528,16 @@ body {
     color: var(--color-primary);
 }
 
-/* Dropdown Menus */
-.has-dropdown {
+/* Level 3 Dropdown Menus */
+.asset-nav .has-dropdown {
     position: relative;
 }
 
-.dropdown-arrow {
-    font-size: 12px;
-    margin-left: 4px;
-    transition: transform var(--transition-base);
-}
-
-.has-dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-.dropdown-menu {
+/* Third level dropdown positioning */
+.asset-nav .dropdown-menu {
     position: absolute;
-    top: 100%;
     left: 0;
+    top: 100%;
     background: var(--color-background);
     min-width: 260px;
     box-shadow: var(--shadow-lg);
@@ -457,12 +546,13 @@ body {
     visibility: hidden;
     transform: translateY(-10px);
     transition: all var(--transition-base);
-    z-index: 1000;
-    margin-top: 0;
+    z-index: var(--z-dropdown-level3);
+    margin-top: 2px;
     padding: var(--spacing-sm) 0;
 }
 
-.has-dropdown:hover .dropdown-menu {
+.asset-nav .has-dropdown:hover .dropdown-menu,
+.asset-nav .has-dropdown.active .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

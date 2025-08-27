@@ -11,39 +11,64 @@
     <div class="market-ticker">
         <div class="ticker-wrapper">
             <span class="ticker-item">
-                <span class="ticker-name">DAX</span>
-                <span class="ticker-value">24.181,92</span>
-                <span class="ticker-change negative">-0,36%</span>
+                <span class="ticker-name">L&S DAX</span>
+                <span class="ticker-value">24.118,50</span>
+                <span class="ticker-change negative">-0,14%</span>
             </span>
             <span class="ticker-item">
-                <span class="ticker-name">Dow</span>
-                <span class="ticker-value">45.282,47</span>
-                <span class="ticker-change negative">-0,77%</span>
+                <span class="ticker-name">E-Stoxx 50</span>
+                <span class="ticker-value">5.394,35</span>
+                <span class="ticker-change negative">-0,10%</span>
             </span>
             <span class="ticker-item">
-                <span class="ticker-name">Nikkei</span>
-                <span class="ticker-value">42.394,40</span>
-                <span class="ticker-change negative">-0,97%</span>
+                <span class="ticker-name">Dow Jones</span>
+                <span class="ticker-value">45.436,43</span>
+                <span class="ticker-change positive">+0,06%</span>
+            </span>
+            <span class="ticker-item">
+                <span class="ticker-name">S&P 500</span>
+                <span class="ticker-value">6.472,82</span>
+                <span class="ticker-change positive">+0,07%</span>
+            </span>
+            <span class="ticker-item">
+                <span class="ticker-name">Nasdaq 100</span>
+                <span class="ticker-value">23.541,90</span>
+                <span class="ticker-change positive">+0,09%</span>
+            </span>
+            <span class="ticker-item">
+                <span class="ticker-name">Nikkei 225</span>
+                <span class="ticker-value">42.257,56</span>
+                <span class="ticker-change negative">-0,19%</span>
             </span>
             <span class="ticker-item">
                 <span class="ticker-name">Gold</span>
-                <span class="ticker-value">3.377,19</span>
-                <span class="ticker-change positive">+0,67%</span>
+                <span class="ticker-value">3.374,90</span>
+                <span class="ticker-change negative">-0,55%</span>
             </span>
             <span class="ticker-item">
                 <span class="ticker-name">EUR/USD</span>
-                <span class="ticker-value">1,1659</span>
-                <span class="ticker-change positive">+0,39%</span>
-            </span>
-            <span class="ticker-item">
-                <span class="ticker-name">Öl</span>
-                <span class="ticker-value">67,19</span>
-                <span class="ticker-change negative">-1,43%</span>
+                <span class="ticker-value">1,1580</span>
+                <span class="ticker-change negative">-0,55%</span>
             </span>
             <span class="ticker-item">
                 <span class="ticker-name">Bitcoin</span>
-                <span class="ticker-value">109.762</span>
-                <span class="ticker-change negative">-0,35%</span>
+                <span class="ticker-value">111.265,19</span>
+                <span class="ticker-change negative">-0,30%</span>
+            </span>
+            <span class="ticker-item">
+                <span class="ticker-name">ETH</span>
+                <span class="ticker-value">4.600,06</span>
+                <span class="ticker-change negative">-0,12%</span>
+            </span>
+            <span class="ticker-item">
+                <span class="ticker-name">Brent Öl</span>
+                <span class="ticker-value">67,31</span>
+                <span class="ticker-change negative">-0,08%</span>
+            </span>
+            <span class="ticker-item">
+                <span class="ticker-name">Bund Fut.</span>
+                <span class="ticker-value">129,61</span>
+                <span class="ticker-change positive">+0,10%</span>
             </span>
         </div>
     </div>
@@ -84,14 +109,13 @@
 
                     <!-- Services & User Area -->
                     <div class="header-actions">
-                        <!-- Services -->
+                        <!-- Quick Links -->
                         <nav class="services-nav">
                             <a href="#" class="service-link">Forum</a>
                             <a href="#" class="service-link">News</a>
-                            <a href="#" class="service-link portfolio">Portfolio-Tracker</a>
                         </nav>
 
-<!-- User Controls -->
+                        <!-- User Controls -->
                         <div class="user-controls">
                             <button class="icon-button notification">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -122,12 +146,27 @@
             </div>
         </div>
 
-        <!-- Level 2: Asset Classes Navigation -->
+        <!-- Level 2: Main Navigation -->
         <nav class="header-secondary">
+            <div class="container">
+                <ul class="main-nav">
+                    <li class="has-asset-menu">
+                        <a href="#" class="main-nav-link">Märkte <span class="dropdown-arrow">▼</span></a>
+                    </li>
+                    <li><a href="#" class="main-nav-link">News & Analysen</a></li>
+                    <li><a href="#" class="main-nav-link">Community</a></li>
+                    <li><a href="#" class="main-nav-link">Services</a></li>
+                    <li><a href="#" class="main-nav-link">Portfolio-Tracker</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Asset Classes Bar (appears on hover) -->
+        <div class="asset-bar" id="asset-bar">
             <div class="container">
                 <ul class="asset-nav">
                     <li class="has-dropdown">
-                        <a href="#" class="asset-link active">Aktien</a>
+                        <a href="#" class="asset-link">Aktien</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-link">Aktien-Finder</a>
                             <a href="#" class="dropdown-link">DAX</a>
@@ -141,18 +180,19 @@
                             <a href="#" class="dropdown-link">IPOs</a>
                         </div>
                     </li>
-                    <li class="has-dropdown">
-                        <a href="#" class="asset-link">Fonds</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-link">Fonds-Finder</a>
-                        </div>
-                    </li>
+                    <li><a href="#" class="asset-link">Indizes</a></li>
                     <li class="has-dropdown">
                         <a href="#" class="asset-link">ETFs</a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-link">ETF-Finder</a>
                             <a href="#" class="dropdown-link">Nachhaltige ETFs</a>
                             <a href="#" class="dropdown-link">Sparplanrechner</a>
+                        </div>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#" class="asset-link">Fonds</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-link">Fonds-Finder</a>
                         </div>
                     </li>
                     <li class="has-dropdown">
@@ -185,11 +225,10 @@
                     </li>
                     <li><a href="#" class="asset-link">Anleihen</a></li>
                     <li><a href="#" class="asset-link">Devisen</a></li>
-                    <li><a href="#" class="asset-link">Krypto</a></li>
                     <li><a href="#" class="asset-link">Rohstoffe</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Mobile Menu Overlay -->
@@ -210,17 +249,19 @@
         </div>
         
         <div class="mobile-menu-content">
-            <!-- Services -->
+            <!-- Main Navigation -->
             <div class="mobile-menu-section">
-                <div class="mobile-menu-title">Services</div>
-                <a href="#" class="mobile-menu-link">Forum</a>
-                <a href="#" class="mobile-menu-link">News</a>
+                <div class="mobile-menu-title">Navigation</div>
+                <a href="#" class="mobile-menu-link">Märkte</a>
+                <a href="#" class="mobile-menu-link">News & Analysen</a>
+                <a href="#" class="mobile-menu-link">Community</a>
                 <a href="#" class="mobile-menu-link" style="color: var(--color-accent);">Portfolio-Tracker</a>
+                <a href="#" class="mobile-menu-link">Services</a>
             </div>
             
-            <!-- Asset Classes -->
+            <!-- Asset Classes under Märkte -->
             <div class="mobile-menu-section">
-                <div class="mobile-menu-title">Märkte</div>
+                <div class="mobile-menu-title">Asset-Klassen</div>
                 <a href="#" class="mobile-menu-link">Aktien</a>
                 <a href="#" class="mobile-menu-link">Fonds</a>
                 <a href="#" class="mobile-menu-link">ETFs</a>
@@ -230,6 +271,13 @@
                 <a href="#" class="mobile-menu-link">Devisen</a>
                 <a href="#" class="mobile-menu-link">Krypto</a>
                 <a href="#" class="mobile-menu-link">Rohstoffe</a>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="mobile-menu-section">
+                <div class="mobile-menu-title">Quick Links</div>
+                <a href="#" class="mobile-menu-link">Forum</a>
+                <a href="#" class="mobile-menu-link">News</a>
             </div>
             
             <!-- User Area -->
@@ -405,6 +453,66 @@
                 `;
                 searchResults.style.display = 'block';
             }
+        });
+        
+        // Asset bar hover handling
+        const marketsLink = document.querySelector('.has-asset-menu');
+        const assetBar = document.getElementById('asset-bar');
+        let assetBarTimeout;
+        
+        // Show asset bar on Markets hover
+        if (marketsLink && assetBar) {
+            marketsLink.addEventListener('mouseenter', function() {
+                clearTimeout(assetBarTimeout);
+                marketsLink.classList.add('active');
+                assetBar.style.opacity = '1';
+                assetBar.style.visibility = 'visible';
+                assetBar.style.transform = 'translateY(0)';
+            });
+            
+            marketsLink.addEventListener('mouseleave', function() {
+                assetBarTimeout = setTimeout(() => {
+                    if (!assetBar.matches(':hover')) {
+                        marketsLink.classList.remove('active');
+                        assetBar.style.opacity = '0';
+                        assetBar.style.visibility = 'hidden';
+                        assetBar.style.transform = 'translateY(-10px)';
+                    }
+                }, 100);
+            });
+            
+            // Keep asset bar visible when hovering over it
+            assetBar.addEventListener('mouseenter', function() {
+                clearTimeout(assetBarTimeout);
+                marketsLink.classList.add('active');
+            });
+            
+            assetBar.addEventListener('mouseleave', function() {
+                assetBarTimeout = setTimeout(() => {
+                    marketsLink.classList.remove('active');
+                    assetBar.style.opacity = '0';
+                    assetBar.style.visibility = 'hidden';
+                    assetBar.style.transform = 'translateY(-10px)';
+                }, 100);
+            });
+        }
+        
+        // Handle third level dropdowns
+        const dropdownItems = document.querySelectorAll('.asset-nav .has-dropdown');
+        dropdownItems.forEach(item => {
+            let timeoutId;
+            
+            item.addEventListener('mouseenter', function() {
+                clearTimeout(timeoutId);
+                this.classList.add('active');
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const element = this;
+                timeoutId = setTimeout(() => {
+                    element.classList.remove('active');
+                }, 150);
+            });
         });
         
         // Mobile menu toggle
