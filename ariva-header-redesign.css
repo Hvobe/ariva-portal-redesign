@@ -95,7 +95,7 @@ body {
 }
 
 .ticker-wrapper .ticker-item:first-child .ticker-name {
-    margin-left: 4px; /* Feinabstimmung für perfekte Ausrichtung mit Logo */
+    margin-left: 1px; /* Feinabstimmung für perfekte Ausrichtung mit Logo */
 }
 
 
