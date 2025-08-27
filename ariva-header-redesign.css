@@ -410,6 +410,10 @@ body {
     padding: 0;
 }
 
+.main-nav li:first-child .main-nav-link {
+    padding-left: 0;
+}
+
 .main-nav-link {
     display: block;
     text-decoration: none;
@@ -486,6 +490,10 @@ body {
     margin: 0;
     padding: 0;
     gap: 0;
+}
+
+.asset-nav li:first-child .asset-link {
+    padding-left: 0;
 }
 
 .asset-link {
