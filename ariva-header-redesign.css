@@ -958,12 +958,12 @@ body.mobile-menu-open .mobile-menu {
     }
     
     .search-container {
-        display: none; /* Hide full search bar */
+        display: none !important; /* Force hide full search bar */
     }
     
-    /* Mobile search button */
+    /* Mobile search button - force display */
     .search-icon-mobile {
-        display: block;
+        display: block !important;
         background: none;
         border: none;
         padding: var(--spacing-sm);
@@ -973,7 +973,7 @@ body.mobile-menu-open .mobile-menu {
     
     /* Search overlay for mobile */
     .search-container.mobile-active {
-        display: flex;
+        display: flex !important;
         position: fixed;
         top: 60px;
         left: var(--spacing-md);
@@ -982,10 +982,26 @@ body.mobile-menu-open .mobile-menu {
         background: white;
         box-shadow: var(--shadow-lg);
         border-radius: var(--radius-md);
+        padding: 6px var(--spacing-md);
     }
     
     .search-input {
         font-size: var(--font-size-sm);
+    }
+    
+    /* Hide search results by default on mobile */
+    .search-results {
+        display: none;
+    }
+    
+    /* Show search results when search is active */
+    .search-container.mobile-active ~ .search-results {
+        display: block;
+        position: fixed;
+        top: 110px;
+        left: var(--spacing-md);
+        right: var(--spacing-md);
+        z-index: 1499;
     }
     
     .user-controls {
