@@ -89,13 +89,8 @@ body {
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
     display: flex;
-    gap: 20px;
     overflow-x: auto;
     scrollbar-width: none;
-}
-
-.ticker-wrapper .ticker-item:first-child .ticker-name {
-    margin-left: 1px; /* Feinabstimmung für perfekte Ausrichtung mit Logo */
 }
 
 
@@ -108,6 +103,11 @@ body {
     align-items: center;
     gap: 6px;
     white-space: nowrap;
+    margin-right: 20px;
+}
+
+.market-ticker .ticker-item:first-child {
+    margin-left: 0;
 }
 
 .market-ticker .ticker-name {
