@@ -147,68 +147,81 @@
         <div class="asset-bar" id="asset-bar">
             <div class="container">
                 <ul class="asset-nav">
-                    <li class="has-dropdown">
+                    <li class="has-dropdown" data-submenu="aktien">
                         <a href="#" class="asset-link">Aktien</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-link">Aktien-Finder</a>
-                            <a href="#" class="dropdown-link">DAX</a>
-                            <a href="#" class="dropdown-link">TecDAX</a>
-                            <a href="#" class="dropdown-link">MDAX</a>
-                            <a href="#" class="dropdown-link">Dow-Jones</a>
-                            <a href="#" class="dropdown-link">Weitere Listen</a>
-                            <a href="#" class="dropdown-link">Indizes</a>
-                            <a href="#" class="dropdown-link">Dividenden</a>
-                            <a href="#" class="dropdown-link">Nachhaltige Aktien</a>
-                            <a href="#" class="dropdown-link">IPOs</a>
-                        </div>
                     </li>
                     <li><a href="#" class="asset-link">Indizes</a></li>
-                    <li class="has-dropdown">
+                    <li class="has-dropdown" data-submenu="etfs">
                         <a href="#" class="asset-link">ETFs</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-link">ETF-Finder</a>
-                            <a href="#" class="dropdown-link">Nachhaltige ETFs</a>
-                            <a href="#" class="dropdown-link">Sparplanrechner</a>
-                        </div>
                     </li>
-                    <li class="has-dropdown">
+                    <li class="has-dropdown" data-submenu="fonds">
                         <a href="#" class="asset-link">Fonds</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-link">Fonds-Finder</a>
-                        </div>
                     </li>
-                    <li class="has-dropdown">
+                    <li class="has-dropdown" data-submenu="zertifikate">
                         <a href="#" class="asset-link">Zertifikate</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-link">Zertifikate-Finder</a>
-                            <a href="#" class="dropdown-link">Bonus Zertifikate</a>
-                            <a href="#" class="dropdown-link">Discount-Zertifikate</a>
-                            <a href="#" class="dropdown-link">ETC/ETN</a>
-                            <a href="#" class="dropdown-link">Express-Zertifikate</a>
-                            <a href="#" class="dropdown-link">Index-Zertifikate</a>
-                            <a href="#" class="dropdown-link">Aktienanleihen</a>
-                            <a href="#" class="dropdown-link">Krypto-Zertifikate</a>
-                            <a href="#" class="dropdown-link">Zertifikate-Matrix</a>
-                            <a href="#" class="dropdown-link">Rendite-Tools</a>
-                        </div>
                     </li>
-                    <li class="has-dropdown">
+                    <li class="has-dropdown" data-submenu="hebelprodukte">
                         <a href="#" class="asset-link">Hebelprodukte</a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-link">Optionsschein-Finder</a>
-                            <a href="#" class="dropdown-link">Knock-Out-Finder</a>
-                            <a href="#" class="dropdown-link">Faktor-Zertifikate-Finder</a>
-                            <a href="#" class="dropdown-link">Optionsscheine</a>
-                            <a href="#" class="dropdown-link">Knock-Outs</a>
-                            <a href="#" class="dropdown-link">Faktor-Zertifikate</a>
-                            <a href="#" class="dropdown-link">Hebelprodukte-Matrix</a>
-                            <a href="#" class="dropdown-link">Knock-Out-Map</a>
-                        </div>
                     </li>
                     <li><a href="#" class="asset-link">Anleihen</a></li>
                     <li><a href="#" class="asset-link">Devisen</a></li>
+                    <li><a href="#" class="asset-link">Krypto</a></li>
                     <li><a href="#" class="asset-link">Rohstoffe</a></li>
                 </ul>
+            </div>
+            
+            <!-- Third Level Navigation (horizontal) -->
+            <div class="sub-nav-bar" id="sub-nav-bar">
+                <div class="container">
+                    <!-- Aktien Submenu -->
+                    <ul class="sub-nav" data-menu="aktien" style="display: none;">
+                        <li><a href="#" class="sub-nav-link">Aktienkurse</a></li>
+                        <li><a href="#" class="sub-nav-link">Aktienfinder</a></li>
+                        <li><a href="#" class="sub-nav-link">Top/Flop</a></li>
+                        <li><a href="#" class="sub-nav-link">Meistgesuchte Aktien</a></li>
+                        <li><a href="#" class="sub-nav-link">Aktien aller Länder</a></li>
+                        <li><a href="#" class="sub-nav-link">Finanzkalender</a></li>
+                        <li><a href="#" class="sub-nav-link">Basiswissen Aktien</a></li>
+                    </ul>
+                    
+                    <!-- ETFs Submenu -->
+                    <ul class="sub-nav" data-menu="etfs" style="display: none;">
+                        <li><a href="#" class="sub-nav-link">ETF-Finder</a></li>
+                        <li><a href="#" class="sub-nav-link">Nachhaltige ETFs</a></li>
+                        <li><a href="#" class="sub-nav-link">Sparplanrechner</a></li>
+                    </ul>
+                    
+                    <!-- Fonds Submenu -->
+                    <ul class="sub-nav" data-menu="fonds" style="display: none;">
+                        <li><a href="#" class="sub-nav-link">Fonds-Finder</a></li>
+                    </ul>
+                    
+                    <!-- Zertifikate Submenu -->
+                    <ul class="sub-nav" data-menu="zertifikate" style="display: none;">
+                        <li><a href="#" class="sub-nav-link">Zertifikate-Finder</a></li>
+                        <li><a href="#" class="sub-nav-link">Bonus Zertifikate</a></li>
+                        <li><a href="#" class="sub-nav-link">Discount-Zertifikate</a></li>
+                        <li><a href="#" class="sub-nav-link">ETC/ETN</a></li>
+                        <li><a href="#" class="sub-nav-link">Express-Zertifikate</a></li>
+                        <li><a href="#" class="sub-nav-link">Index-Zertifikate</a></li>
+                        <li><a href="#" class="sub-nav-link">Aktienanleihen</a></li>
+                        <li><a href="#" class="sub-nav-link">Krypto-Zertifikate</a></li>
+                        <li><a href="#" class="sub-nav-link">Zertifikate-Matrix</a></li>
+                        <li><a href="#" class="sub-nav-link">Rendite-Tools</a></li>
+                    </ul>
+                    
+                    <!-- Hebelprodukte Submenu -->
+                    <ul class="sub-nav" data-menu="hebelprodukte" style="display: none;">
+                        <li><a href="#" class="sub-nav-link">Optionsschein-Finder</a></li>
+                        <li><a href="#" class="sub-nav-link">Knock-Out-Finder</a></li>
+                        <li><a href="#" class="sub-nav-link">Faktor-Zertifikate-Finder</a></li>
+                        <li><a href="#" class="sub-nav-link">Optionsscheine</a></li>
+                        <li><a href="#" class="sub-nav-link">Knock-Outs</a></li>
+                        <li><a href="#" class="sub-nav-link">Faktor-Zertifikate</a></li>
+                        <li><a href="#" class="sub-nav-link">Hebelprodukte-Matrix</a></li>
+                        <li><a href="#" class="sub-nav-link">Knock-Out-Map</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
@@ -481,23 +494,66 @@
             });
         }
         
-        // Handle third level dropdowns
+        // Handle horizontal third level navigation
         const dropdownItems = document.querySelectorAll('.asset-nav .has-dropdown');
+        const subNavBar = document.getElementById('sub-nav-bar');
+        const allSubMenus = document.querySelectorAll('.sub-nav');
+        let subNavTimeout;
+        
         dropdownItems.forEach(item => {
-            let timeoutId;
-            
             item.addEventListener('mouseenter', function() {
-                clearTimeout(timeoutId);
+                clearTimeout(subNavTimeout);
+                
+                // Get the submenu to show
+                const submenuName = this.dataset.submenu;
+                const targetSubmenu = document.querySelector(`.sub-nav[data-menu="${submenuName}"]`);
+                
+                // Hide all submenus
+                allSubMenus.forEach(menu => {
+                    menu.style.display = 'none';
+                });
+                
+                // Show the target submenu
+                if (targetSubmenu) {
+                    targetSubmenu.style.display = 'flex';
+                    subNavBar.classList.add('active');
+                }
+                
+                // Add active class to the hovered item
+                dropdownItems.forEach(di => di.classList.remove('active'));
                 this.classList.add('active');
             });
             
             item.addEventListener('mouseleave', function() {
                 const element = this;
-                timeoutId = setTimeout(() => {
-                    element.classList.remove('active');
-                }, 150);
+                subNavTimeout = setTimeout(() => {
+                    if (!subNavBar.matches(':hover')) {
+                        element.classList.remove('active');
+                        subNavBar.classList.remove('active');
+                        allSubMenus.forEach(menu => {
+                            menu.style.display = 'none';
+                        });
+                    }
+                }, 100);
             });
         });
+        
+        // Keep sub-nav visible when hovering over it
+        if (subNavBar) {
+            subNavBar.addEventListener('mouseenter', function() {
+                clearTimeout(subNavTimeout);
+            });
+            
+            subNavBar.addEventListener('mouseleave', function() {
+                subNavTimeout = setTimeout(() => {
+                    dropdownItems.forEach(item => item.classList.remove('active'));
+                    subNavBar.classList.remove('active');
+                    allSubMenus.forEach(menu => {
+                        menu.style.display = 'none';
+                    });
+                }, 100);
+            });
+        }
         
         // Mobile search toggle
         if (searchToggleMobile) {

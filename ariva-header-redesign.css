@@ -547,58 +547,47 @@ body {
     color: var(--color-primary);
 }
 
-/* Level 3 Dropdown Menus */
-.asset-nav .has-dropdown {
-    position: relative;
+/* Level 3 - Horizontal Sub Navigation */
+.sub-nav-bar {
+    background: #f3f5f7;
+    border-bottom: 1px solid var(--color-border);
+    min-height: 0;
+    overflow: hidden;
+    transition: min-height 200ms ease;
 }
 
-/* Third level dropdown positioning */
-.asset-nav .dropdown-menu {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background: var(--color-background);
-    min-width: 260px;
-    box-shadow: var(--shadow-lg);
-    border-radius: var(--radius-md);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all var(--transition-base);
-    z-index: var(--z-dropdown-level3);
-    margin-top: 2px;
-    padding: var(--spacing-sm) 0;
+.sub-nav-bar.active {
+    min-height: 40px;
 }
 
-.asset-nav .has-dropdown:hover .dropdown-menu,
-.asset-nav .has-dropdown.active .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+.sub-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    align-items: center;
+    height: 40px;
 }
 
-.dropdown-link {
+.sub-nav li:first-child .sub-nav-link {
+    padding-left: 0;
+}
+
+.sub-nav-link {
     display: block;
-    padding: var(--spacing-md) var(--spacing-lg);
-    color: var(--color-text-primary);
+    padding: 8px 16px;
+    color: #4a5568;
     text-decoration: none;
-    font-size: var(--font-size-sm);  /* Changed from base to sm (13px) for hierarchy */
-    transition: all var(--transition-base);
+    font-size: 13px;
     white-space: nowrap;
-    line-height: 1.5;
+    transition: all var(--transition-base);
+    border-bottom: 2px solid transparent;
 }
 
-.dropdown-link:hover {
-    background: var(--color-surface);
+.sub-nav-link:hover {
     color: var(--color-primary);
-}
-
-.dropdown-link:first-child {
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-}
-
-.dropdown-link:last-child {
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    border-bottom-color: var(--color-primary);
 }
 
 /* Search divider and button */
