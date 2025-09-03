@@ -501,7 +501,7 @@ body {
 .mega-menu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 80px;
 }
 
 /* Left Column - Navigation */
@@ -563,8 +563,7 @@ body {
 
 /* Right Column - Market Cards */
 .mega-menu-markets {
-    padding-left: 40px;
-    border-left: 1px solid var(--color-border);
+    padding-left: 60px;
 }
 
 .market-cards {
@@ -574,12 +573,11 @@ body {
 }
 
 .market-card {
-    background: var(--color-surface);
+    background: #fafafa;
     border-radius: 8px;
-    padding: 12px 16px;
+    padding: 14px 18px;
     transition: all 200ms ease;
     cursor: pointer;
-    border: 1px solid var(--color-border);
 }
 
 .market-card:hover {
