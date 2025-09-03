@@ -478,13 +478,14 @@ body {
     top: 100%;
     left: 0;
     right: 0;
-    background: #1a1e2e; /* Dark blue-black background */
+    background: #ffffff; /* Clean white background */
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
     transition: all 200ms ease;
     z-index: var(--z-dropdown);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--color-primary);
 }
 
 .mega-menu.active {
@@ -515,13 +516,12 @@ body {
 }
 
 .menu-section-title {
-    color: #ffffff;
+    color: var(--color-text-secondary);
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
-    opacity: 0.7;
 }
 
 .menu-links {
@@ -531,7 +531,7 @@ body {
 }
 
 .menu-link {
-    color: #d1d5db;
+    color: var(--color-text-primary);
     text-decoration: none;
     font-size: 14px;
     padding: 6px 0;
@@ -541,7 +541,7 @@ body {
 }
 
 .menu-link:hover {
-    color: #ffffff;
+    color: var(--color-primary);
     padding-left: 8px;
 }
 
@@ -564,7 +564,7 @@ body {
 /* Right Column - Market Cards */
 .mega-menu-markets {
     padding-left: 40px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid var(--color-border);
 }
 
 .market-cards {
@@ -574,21 +574,23 @@ body {
 }
 
 .market-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-surface);
     border-radius: 8px;
     padding: 12px 16px;
     transition: all 200ms ease;
     cursor: pointer;
+    border: 1px solid var(--color-border);
 }
 
 .market-card:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: white;
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .market-name {
     font-size: 11px;
-    color: #9ca3af;
+    color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
@@ -597,7 +599,7 @@ body {
 .market-value {
     font-size: 18px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--color-text-primary);
     margin-bottom: 4px;
 }
 
