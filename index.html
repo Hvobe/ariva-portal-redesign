@@ -143,84 +143,86 @@
             </div>
         </nav>
         
-        <!-- Asset Classes Bar (appears on hover) -->
-        <div class="asset-bar" id="asset-bar">
-            <div class="container">
-                <ul class="asset-nav">
-                    <li class="has-dropdown" data-submenu="aktien">
-                        <a href="#" class="asset-link">Aktien</a>
-                    </li>
-                    <li><a href="#" class="asset-link">Indizes</a></li>
-                    <li class="has-dropdown" data-submenu="etfs">
-                        <a href="#" class="asset-link">ETFs</a>
-                    </li>
-                    <li class="has-dropdown" data-submenu="fonds">
-                        <a href="#" class="asset-link">Fonds</a>
-                    </li>
-                    <li class="has-dropdown" data-submenu="zertifikate">
-                        <a href="#" class="asset-link">Zertifikate</a>
-                    </li>
-                    <li class="has-dropdown" data-submenu="hebelprodukte">
-                        <a href="#" class="asset-link">Hebelprodukte</a>
-                    </li>
-                    <li><a href="#" class="asset-link">Anleihen</a></li>
-                    <li><a href="#" class="asset-link">Devisen</a></li>
-                    <li><a href="#" class="asset-link">Krypto</a></li>
-                    <li><a href="#" class="asset-link">Rohstoffe</a></li>
-                </ul>
-            </div>
-            
-            <!-- Third Level Navigation (horizontal) -->
-            <div class="sub-nav-bar" id="sub-nav-bar">
+        <!-- Bloomberg-Style Mega Menu -->
+        <div class="mega-menu" id="mega-menu">
+            <div class="mega-menu-content">
                 <div class="container">
-                    <!-- Aktien Submenu -->
-                    <ul class="sub-nav" data-menu="aktien" style="display: none;">
-                        <li><a href="#" class="sub-nav-link">Aktienkurse</a></li>
-                        <li><a href="#" class="sub-nav-link">Aktienfinder</a></li>
-                        <li><a href="#" class="sub-nav-link">Top/Flop</a></li>
-                        <li><a href="#" class="sub-nav-link">Meistgesuchte Aktien</a></li>
-                        <li><a href="#" class="sub-nav-link">Aktien aller Länder</a></li>
-                        <li><a href="#" class="sub-nav-link">Finanzkalender</a></li>
-                        <li><a href="#" class="sub-nav-link">Basiswissen Aktien</a></li>
-                    </ul>
-                    
-                    <!-- ETFs Submenu -->
-                    <ul class="sub-nav" data-menu="etfs" style="display: none;">
-                        <li><a href="#" class="sub-nav-link">ETF-Finder</a></li>
-                        <li><a href="#" class="sub-nav-link">Nachhaltige ETFs</a></li>
-                        <li><a href="#" class="sub-nav-link">Sparplanrechner</a></li>
-                    </ul>
-                    
-                    <!-- Fonds Submenu -->
-                    <ul class="sub-nav" data-menu="fonds" style="display: none;">
-                        <li><a href="#" class="sub-nav-link">Fonds-Finder</a></li>
-                    </ul>
-                    
-                    <!-- Zertifikate Submenu -->
-                    <ul class="sub-nav" data-menu="zertifikate" style="display: none;">
-                        <li><a href="#" class="sub-nav-link">Zertifikate-Finder</a></li>
-                        <li><a href="#" class="sub-nav-link">Bonus Zertifikate</a></li>
-                        <li><a href="#" class="sub-nav-link">Discount-Zertifikate</a></li>
-                        <li><a href="#" class="sub-nav-link">ETC/ETN</a></li>
-                        <li><a href="#" class="sub-nav-link">Express-Zertifikate</a></li>
-                        <li><a href="#" class="sub-nav-link">Index-Zertifikate</a></li>
-                        <li><a href="#" class="sub-nav-link">Aktienanleihen</a></li>
-                        <li><a href="#" class="sub-nav-link">Krypto-Zertifikate</a></li>
-                        <li><a href="#" class="sub-nav-link">Zertifikate-Matrix</a></li>
-                        <li><a href="#" class="sub-nav-link">Rendite-Tools</a></li>
-                    </ul>
-                    
-                    <!-- Hebelprodukte Submenu -->
-                    <ul class="sub-nav" data-menu="hebelprodukte" style="display: none;">
-                        <li><a href="#" class="sub-nav-link">Optionsschein-Finder</a></li>
-                        <li><a href="#" class="sub-nav-link">Knock-Out-Finder</a></li>
-                        <li><a href="#" class="sub-nav-link">Faktor-Zertifikate-Finder</a></li>
-                        <li><a href="#" class="sub-nav-link">Optionsscheine</a></li>
-                        <li><a href="#" class="sub-nav-link">Knock-Outs</a></li>
-                        <li><a href="#" class="sub-nav-link">Faktor-Zertifikate</a></li>
-                        <li><a href="#" class="sub-nav-link">Hebelprodukte-Matrix</a></li>
-                        <li><a href="#" class="sub-nav-link">Knock-Out-Map</a></li>
-                    </ul>
+                    <div class="mega-menu-grid">
+                        <!-- Left Column: Navigation -->
+                        <div class="mega-menu-nav">
+                            <div class="menu-section">
+                                <h4 class="menu-section-title">Asset-Klassen</h4>
+                                <div class="menu-links">
+                                    <a href="/aktien" class="menu-link">Aktien</a>
+                                    <a href="/indizes" class="menu-link">Indizes</a>
+                                    <a href="/etfs" class="menu-link">ETFs</a>
+                                    <a href="/fonds" class="menu-link">Fonds</a>
+                                    <a href="/zertifikate" class="menu-link">Zertifikate</a>
+                                    <a href="/hebelprodukte" class="menu-link">Hebelprodukte</a>
+                                    <a href="/anleihen" class="menu-link">Anleihen</a>
+                                    <a href="/devisen" class="menu-link">Devisen</a>
+                                    <a href="/krypto" class="menu-link">Kryptowährungen</a>
+                                    <a href="/rohstoffe" class="menu-link">Rohstoffe</a>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-section">
+                                <h4 class="menu-section-title">Tools & Services</h4>
+                                <div class="menu-links">
+                                    <a href="/aktien-finder" class="menu-link">Aktien-Finder</a>
+                                    <a href="/etf-finder" class="menu-link">ETF-Finder</a>
+                                    <a href="/zertifikate-finder" class="menu-link">Zertifikate-Finder</a>
+                                    <a href="/hebelprodukte-finder" class="menu-link">Hebelprodukte-Finder</a>
+                                    <a href="/finanzkalender" class="menu-link">Finanzkalender</a>
+                                    <a href="/top-flop" class="menu-link">Top/Flop</a>
+                                    <a href="/meistgesucht" class="menu-link">Meistgesucht</a>
+                                    <a href="/basiswissen" class="menu-link">Basiswissen</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column: Market Cards -->
+                        <div class="mega-menu-markets">
+                            <h4 class="menu-section-title">Marktübersicht</h4>
+                            <div class="market-cards">
+                                <div class="market-card">
+                                    <div class="market-name">DAX</div>
+                                    <div class="market-value">24.118,50</div>
+                                    <div class="market-change positive">▲ +0,14%</div>
+                                </div>
+                                <div class="market-card">
+                                    <div class="market-name">DOW JONES</div>
+                                    <div class="market-value">45.436,43</div>
+                                    <div class="market-change positive">▲ +0,06%</div>
+                                </div>
+                                <div class="market-card">
+                                    <div class="market-name">NASDAQ</div>
+                                    <div class="market-value">23.541,90</div>
+                                    <div class="market-change positive">▲ +0,09%</div>
+                                </div>
+                                <div class="market-card">
+                                    <div class="market-name">EUR/USD</div>
+                                    <div class="market-value">1,1580</div>
+                                    <div class="market-change negative">▼ -0,55%</div>
+                                </div>
+                                <div class="market-card">
+                                    <div class="market-name">GOLD</div>
+                                    <div class="market-value">3.374,90</div>
+                                    <div class="market-change negative">▼ -0,55%</div>
+                                </div>
+                                <div class="market-card">
+                                    <div class="market-name">BITCOIN</div>
+                                    <div class="market-value">111.265</div>
+                                    <div class="market-change negative">▼ -3,30%</div>
+                                </div>
+                                <div class="market-card">
+                                    <div class="market-name">ÖL (BRENT)</div>
+                                    <div class="market-value">67,31</div>
+                                    <div class="market-change negative">▼ -0,08%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -452,108 +454,59 @@
             }
         });
         
-        // Asset bar hover handling
+        // Mega Menu handling
         const marketsLink = document.querySelector('.has-asset-menu');
-        const assetBar = document.getElementById('asset-bar');
-        let assetBarTimeout;
+        const megaMenu = document.getElementById('mega-menu');
+        let megaMenuTimeout;
         
-        // Show asset bar on Markets hover
-        if (marketsLink && assetBar) {
+        // Show mega menu on Markets hover
+        if (marketsLink && megaMenu) {
             marketsLink.addEventListener('mouseenter', function() {
-                clearTimeout(assetBarTimeout);
+                clearTimeout(megaMenuTimeout);
                 marketsLink.classList.add('active');
-                assetBar.style.opacity = '1';
-                assetBar.style.visibility = 'visible';
-                assetBar.style.transform = 'translateY(0)';
+                megaMenu.classList.add('active');
             });
             
             marketsLink.addEventListener('mouseleave', function() {
-                assetBarTimeout = setTimeout(() => {
-                    if (!assetBar.matches(':hover')) {
+                megaMenuTimeout = setTimeout(() => {
+                    if (!megaMenu.matches(':hover')) {
                         marketsLink.classList.remove('active');
-                        assetBar.style.opacity = '0';
-                        assetBar.style.visibility = 'hidden';
-                        assetBar.style.transform = 'translateY(-10px)';
+                        megaMenu.classList.remove('active');
                     }
                 }, 100);
             });
             
-            // Keep asset bar visible when hovering over it
-            assetBar.addEventListener('mouseenter', function() {
-                clearTimeout(assetBarTimeout);
+            // Keep mega menu visible when hovering over it
+            megaMenu.addEventListener('mouseenter', function() {
+                clearTimeout(megaMenuTimeout);
                 marketsLink.classList.add('active');
             });
             
-            assetBar.addEventListener('mouseleave', function() {
-                assetBarTimeout = setTimeout(() => {
+            megaMenu.addEventListener('mouseleave', function() {
+                megaMenuTimeout = setTimeout(() => {
                     marketsLink.classList.remove('active');
-                    assetBar.style.opacity = '0';
-                    assetBar.style.visibility = 'hidden';
-                    assetBar.style.transform = 'translateY(-10px)';
+                    megaMenu.classList.remove('active');
                 }, 100);
             });
         }
         
-        // Handle horizontal third level navigation
-        const dropdownItems = document.querySelectorAll('.asset-nav .has-dropdown');
-        const subNavBar = document.getElementById('sub-nav-bar');
-        const allSubMenus = document.querySelectorAll('.sub-nav');
-        let subNavTimeout;
-        
-        dropdownItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                clearTimeout(subNavTimeout);
-                
-                // Get the submenu to show
-                const submenuName = this.dataset.submenu;
-                const targetSubmenu = document.querySelector(`.sub-nav[data-menu="${submenuName}"]`);
-                
-                // Hide all submenus
-                allSubMenus.forEach(menu => {
-                    menu.style.display = 'none';
-                });
-                
-                // Show the target submenu
-                if (targetSubmenu) {
-                    targetSubmenu.style.display = 'flex';
-                    subNavBar.classList.add('active');
-                }
-                
-                // Add active class to the hovered item
-                dropdownItems.forEach(di => di.classList.remove('active'));
-                this.classList.add('active');
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                const element = this;
-                subNavTimeout = setTimeout(() => {
-                    if (!subNavBar.matches(':hover')) {
-                        element.classList.remove('active');
-                        subNavBar.classList.remove('active');
-                        allSubMenus.forEach(menu => {
-                            menu.style.display = 'none';
-                        });
-                    }
-                }, 100);
-            });
+        // Close mega menu on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && megaMenu && megaMenu.classList.contains('active')) {
+                megaMenu.classList.remove('active');
+                marketsLink.classList.remove('active');
+            }
         });
         
-        // Keep sub-nav visible when hovering over it
-        if (subNavBar) {
-            subNavBar.addEventListener('mouseenter', function() {
-                clearTimeout(subNavTimeout);
-            });
-            
-            subNavBar.addEventListener('mouseleave', function() {
-                subNavTimeout = setTimeout(() => {
-                    dropdownItems.forEach(item => item.classList.remove('active'));
-                    subNavBar.classList.remove('active');
-                    allSubMenus.forEach(menu => {
-                        menu.style.display = 'none';
-                    });
-                }, 100);
-            });
-        }
+        // Close mega menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (megaMenu && megaMenu.classList.contains('active')) {
+                if (!megaMenu.contains(e.target) && !marketsLink.contains(e.target)) {
+                    megaMenu.classList.remove('active');
+                    marketsLink.classList.remove('active');
+                }
+            }
+        });
         
         // Mobile search toggle
         if (searchToggleMobile) {
