@@ -476,42 +476,44 @@ body {
 .mega-menu {
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    width: 100%;
+    max-width: 1280px;
     background: #ffffff; /* Clean white background */
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
     transition: all 200ms ease;
     z-index: var(--z-dropdown);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 8px 8px;
 }
 
 .mega-menu.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .mega-menu-content {
-    padding: 32px 0;
+    padding: 20px 0;
 }
 
 .mega-menu-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 32px;
 }
 
 /* Left Column - Navigation */
 .mega-menu-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 24px;
 }
 
 .menu-section {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .menu-section-title {
@@ -519,21 +521,21 @@ body {
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 16px;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
 }
 
 .menu-links {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 0;
 }
 
 .menu-link {
     color: var(--color-text-primary);
     text-decoration: none;
-    font-size: 15px;
-    padding: 7px 0;
+    font-size: 14px;
+    padding: 5px 0;
     transition: all 150ms ease;
     position: relative;
     display: inline-block;
@@ -562,20 +564,20 @@ body {
 
 /* Right Column - Market Cards */
 .mega-menu-markets {
-    padding-left: 40px;
+    padding-left: 32px;
     border-left: 1px solid #e5e7eb;
 }
 
 .market-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .market-card {
     background: #fafafa;
-    border-radius: 8px;
-    padding: 14px 18px;
+    border-radius: 6px;
+    padding: 10px 14px;
     transition: all 200ms ease;
     cursor: pointer;
 }
@@ -587,23 +589,23 @@ body {
 }
 
 .market-name {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--color-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     font-weight: 500;
 }
 
 .market-value {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--color-text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .market-change {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
 }
 
