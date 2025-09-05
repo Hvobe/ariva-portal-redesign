@@ -578,22 +578,6 @@ body {
 .menu-link:hover {
     background: #f0f4f8;
     color: var(--color-primary);
-    transform: translateX(4px);
-}
-
-.menu-link:hover::before {
-    content: '→';
-    position: absolute;
-    left: -2px;
-    opacity: 0;
-    animation: slideIn 200ms forwards;
-}
-
-@keyframes slideIn {
-    to {
-        left: 4px;
-        opacity: 1;
-    }
 }
 
 /* Right Column - Market Cards */
