@@ -4,47 +4,95 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the Ariva Portal Redesign project - a modern redesign of the ARIVA.DE financial portal. The project focuses on the main redesign implementation with improved UX/UI.
+The Ariva Portal Redesign is a modern reimplementation of the ARIVA.DE financial portal, focusing on improved UX/UI with a cleaner, more modern design. This is a static website project using vanilla HTML/CSS with no external dependencies.
 
-## Main Files
+## Repository Structure
 
-### Core Redesign Files
-- **`ariva-redesign.html`** - Main redesign implementation page
-- **`ariva-redesign.css`** - Core CSS with design system variables and base styles
-- **`index.html`** - Project overview/demo page
+```
+/Users/hendrik/Ariva Portal/
+├── index.html                 # Main portal page with mega menu navigation
+├── login.html                 # Login/registration page with modern design
+├── ariva-header-redesign.css  # Primary CSS with all navigation and component styles
+├── ariva-redesign.css         # Design system variables and base utility classes
+├── arivalogo.png              # Primary logo file
+└── archive/                   # Development prototypes and documentation
+    ├── IMPLEMENTATION-GUIDE.md
+    ├── HEADER-DESIGN-DOCUMENTATION.md
+    └── [various prototype files]
+```
 
-### Assets
-- `ariva-logo.png` / `ariva-logo.svg` - Logo files
-- `arivalogo.png` - Alternative logo file
+## Architecture
 
-### Archive Folder
-The `archive/` folder contains additional prototypes, documentation, and component files that were part of the development process but are not essential for the main redesign.
+### CSS Architecture
+The project uses a two-tier CSS structure:
+1. **`ariva-redesign.css`**: Design system foundation with CSS custom properties for colors, typography, spacing, and utility classes
+2. **`ariva-header-redesign.css`**: Component-specific styles for header, navigation, search, and page layouts
+
+### Navigation System
+- **Two-level mega menu**: Primary navigation (Märkte, News, Analysen, Tools, Forum, Wissen) with dropdown submenus
+- **Bloomberg-style design**: Compact mega menu with vertical dividers and organized categories
+- **Mobile-responsive**: Hamburger menu for mobile devices with slide-out navigation
+
+### Search Component
+- Integrated search bar with real-time results dropdown
+- Onvista-style search results with sections for stocks, indices, and commodities
+- Quick access buttons for charts and discussions
 
 ## Design System
 
-The project uses CSS custom properties for consistent theming:
-- Primary color: `#0d47a1` (modern dark blue)
-- Accent color: `#c62828` (modern red)  
-- Spacing system with variables (`--spacing-sm`, `--spacing-md`, etc.)
-- Responsive breakpoints: Desktop (>1024px), Tablet (768-1024px), Mobile (<768px)
+### Color Palette
+```css
+--color-primary: #1e3a5f;      /* Dark blue for header */
+--color-accent: #e53e3e;        /* Red for CTAs */
+--color-positive: #10b981;     /* Green for positive values */
+--color-negative: #ef4444;     /* Red for negative values */
+```
 
-## Development
+### Responsive Breakpoints
+- Desktop: > 1024px
+- Tablet: 768px - 1024px  
+- Mobile: < 768px
 
-This is a static website project. To view:
+### Z-index Layers
+```css
+--z-dropdown: 1000;
+--z-dropdown-level3: 1001;
+--z-sticky: 1020;
+--z-modal: 1050;
+```
 
-1. **Open directly**: Open `ariva-redesign.html` in a browser
-2. **Local server** (optional):
-   ```bash
-   python3 -m http.server 8000
-   # or
-   npx http-server
-   ```
+## Development Commands
 
-## Key Features
+Since this is a static site with no build process:
 
-- Modern, clean design with increased whitespace
-- Two-level navigation structure
-- Integrated search with chart functionality
+```bash
+# View locally with Python
+python3 -m http.server 8000
+
+# View locally with Node.js
+npx http-server
+
+# Or simply open index.html in a browser
+```
+
+## Key Implementation Details
+
+### Market Ticker
+The market ticker bar at the top displays real-time market data with color-coded changes (green/red).
+
+### Search Functionality
+Search results are currently mocked in HTML. JavaScript interaction is handled inline for:
+- Mobile search toggle
+- Dropdown menu interactions
+- Chart popup functionality
+
+### Login Page
+Separate modern login design with:
+- Split-screen layout (login vs. registration)
+- Password visibility toggle
+- Social login options
 - Mobile-responsive design
-- CSS-only effects for performance
-- No external dependencies - vanilla HTML/CSS only
+
+## GitHub Repository
+
+Repository URL: https://github.com/Hvobe/ariva-portal-redesign

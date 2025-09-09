@@ -88,116 +88,294 @@
                                     <path d="m21 21-4.35-4.35"></path>
                                 </svg>
                             </button>
+                            <div class="search-divider"></div>
+                            <button class="chart-button" title="Chart-Tool öffnen">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </button>
                         </div>
-                        <!-- Search Results Dropdown - Onvista Style -->
-                        <div class="search-results" id="search-results">
-                            <!-- WERTE Section -->
-                            <div class="search-section">
-                                <div class="search-section-header">
-                                    <span>WERTE</span>
-                                    <span class="section-toggle">▲</span>
-                                </div>
-                                <div class="search-section-content">
-                                    <div class="search-result-item">
-                                        <div class="result-icon">📈</div>
-                                        <div class="result-info">
-                                            <div class="result-name">SAP SE</div>
-                                            <div class="result-meta">Aktie • WKN 716460</div>
-                                        </div>
-                                        <div class="result-data">
-                                            <div class="result-price">
-                                                <div class="price-value">165,42 EUR</div>
-                                                <div class="price-time">Xetra • 12:15:30</div>
-                                            </div>
-                                            <div class="result-actions">
-                                                <button class="action-btn chart-btn">Chart</button>
-                                                <button class="action-btn discussion-btn">Diskussion</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="search-result-item">
-                                        <div class="result-icon">📊</div>
-                                        <div class="result-info">
-                                            <div class="result-name">Mercedes-Benz Group</div>
-                                            <div class="result-meta">Aktie • WKN 710000</div>
-                                        </div>
-                                        <div class="result-data">
-                                            <div class="result-price">
-                                                <div class="price-value">53,52 EUR</div>
-                                                <div class="price-time">Xetra • 12:15:28</div>
-                                            </div>
-                                            <div class="result-actions">
-                                                <button class="action-btn chart-btn">Chart</button>
-                                                <button class="action-btn discussion-btn">Diskussion</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="search-result-item">
-                                        <div class="result-icon">💼</div>
-                                        <div class="result-info">
-                                            <div class="result-name">Deutsche Bank AG</div>
-                                            <div class="result-meta">Aktie • WKN 514000</div>
-                                        </div>
-                                        <div class="result-data">
-                                            <div class="result-price">
-                                                <div class="price-value">15,89 EUR</div>
-                                                <div class="price-time">Xetra • 12:15:25</div>
-                                            </div>
-                                            <div class="result-actions">
-                                                <button class="action-btn chart-btn">Chart</button>
-                                                <button class="action-btn discussion-btn">Diskussion</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="#" class="show-all-results">Alle Ergebnisse →</a>
+                        <!-- Search Results Dropdown - Version A (Empty State) -->
+                        <div class="search-results search-empty" id="search-results-empty">
+                            <!-- Finder Bar -->
+                            <div class="finder-bar">
+                                <button class="finder-btn active">Aktien</button>
+                                <button class="finder-btn">ETFs</button>
+                                <button class="finder-btn">Fonds</button>
+                                <button class="finder-btn">Derivate</button>
+                                <button class="finder-btn">Anleihen</button>
+                                <button class="finder-btn">Indizes</button>
                             </div>
                             
-                            <!-- BELIEBTE SEITEN Section -->
-                            <div class="search-section">
-                                <div class="search-section-header">
-                                    <span>BELIEBTE SEITEN</span>
-                                    <span class="section-toggle">▲</span>
+                            <div class="search-empty-content">
+                                <!-- Left Column: Most Viewed Securities -->
+                                <div class="search-column">
+                                    <h3 class="column-title">Meistaufgerufene Werte</h3>
+                                    <div class="favorite-list">
+                                        <a href="#" class="favorite-item">
+                                            <span class="favorite-name">DAX</span>
+                                            <span class="favorite-value">24.118,50</span>
+                                            <span class="favorite-change negative">-0,14%</span>
+                                        </a>
+                                        <a href="#" class="favorite-item">
+                                            <span class="favorite-name">SAP SE</span>
+                                            <span class="favorite-value">165,42 €</span>
+                                            <span class="favorite-change positive">+2,35%</span>
+                                        </a>
+                                        <a href="#" class="favorite-item">
+                                            <span class="favorite-name">Mercedes-Benz</span>
+                                            <span class="favorite-value">53,52 €</span>
+                                            <span class="favorite-change positive">+1,12%</span>
+                                        </a>
+                                        <a href="#" class="favorite-item">
+                                            <span class="favorite-name">Deutsche Bank</span>
+                                            <span class="favorite-value">15,89 €</span>
+                                            <span class="favorite-change negative">-0,87%</span>
+                                        </a>
+                                        <a href="#" class="favorite-item">
+                                            <span class="favorite-name">Siemens</span>
+                                            <span class="favorite-value">178,30 €</span>
+                                            <span class="favorite-change positive">+0,45%</span>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="search-section-content">
-                                    <div class="search-result-item">
-                                        <div class="result-icon">📈</div>
-                                        <div class="result-info">
-                                            <div class="result-name">Portfolio</div>
-                                            <div class="result-meta">Ihre Wertpapiere im Überblick</div>
-                                        </div>
-                                    </div>
-                                    <div class="search-result-item">
-                                        <div class="result-icon">⭐</div>
-                                        <div class="result-info">
-                                            <div class="result-name">Watchlist</div>
-                                            <div class="result-meta">Favoriten beobachten</div>
-                                        </div>
-                                    </div>
-                                    <div class="search-result-item">
-                                        <div class="result-icon">📊</div>
-                                        <div class="result-info">
-                                            <div class="result-name">Realtime-Kurse</div>
-                                            <div class="result-meta">Echtzeitkurse aller Märkte</div>
-                                        </div>
+                                
+                                <!-- Right Column: Popular Pages/Tools -->
+                                <div class="search-column">
+                                    <h3 class="column-title">Beliebte Seiten</h3>
+                                    <div class="pages-list">
+                                        <a href="#" class="page-item">
+                                            <svg class="page-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line x1="9" y1="9" x2="15" y2="9"></line>
+                                                <line x1="9" y1="13" x2="15" y2="13"></line>
+                                            </svg>
+                                            <span>Portfolio</span>
+                                        </a>
+                                        <a href="#" class="page-item">
+                                            <svg class="page-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                            </svg>
+                                            <span>Watchlist</span>
+                                        </a>
+                                        <a href="#" class="page-item">
+                                            <svg class="page-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <line x1="18" y1="20" x2="18" y2="10"></line>
+                                                <line x1="12" y1="20" x2="12" y2="4"></line>
+                                                <line x1="6" y1="20" x2="6" y2="14"></line>
+                                            </svg>
+                                            <span>Realtime-Kurse</span>
+                                        </a>
+                                        <a href="#" class="page-item">
+                                            <svg class="page-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                            </svg>
+                                            <span>Aktien Top/Flop</span>
+                                        </a>
+                                        <a href="#" class="page-item">
+                                            <svg class="page-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <polyline points="12 6 12 12 16 14"></polyline>
+                                            </svg>
+                                            <span>Broker-Vergleich</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Search Results Dropdown - Version B (With Search Results) -->
+                        <div class="search-results search-active" id="search-results">
+                            <!-- Finder Bar -->
+                            <div class="finder-bar">
+                                <button class="finder-btn active">Aktien</button>
+                                <button class="finder-btn">ETFs</button>
+                                <button class="finder-btn">Fonds</button>
+                                <button class="finder-btn">Derivate</button>
+                                <button class="finder-btn">Anleihen</button>
+                                <button class="finder-btn">Indizes</button>
+                            </div>
                             
-                            <!-- NEWS Section -->
-                            <div class="search-section">
-                                <div class="search-section-header">
-                                    <span>NEWS</span>
-                                    <span class="section-toggle">▲</span>
-                                </div>
-                                <div class="search-section-content">
-                                    <div class="news-result-item">
-                                        <div class="news-title">EZB senkt Leitzins um 0,25 Prozentpunkte</div>
-                                        <div class="news-meta">vor 2 Stunden • Wirtschaft</div>
+                            <div class="search-active-content">
+                                <!-- Left Column: Securities List -->
+                                <div class="search-left-column">
+                                    <h3 class="column-title">WERTE</h3>
+                                    <div class="securities-list">
+                                        <div class="security-item">
+                                            <div class="security-main">
+                                                <div class="security-name">Alibaba (ADR)</div>
+                                                <div class="security-meta">Aktie • WKN A117ME • Tradegate</div>
+                                            </div>
+                                            <div class="security-price">
+                                                <div class="price-value">119,200 EUR</div>
+                                                <div class="price-change positive">+2,94 %</div>
+                                                <div class="price-time">19:50:22</div>
+                                            </div>
+                                            <div class="security-actions">
+                                                <button class="action-btn-small">Profil</button>
+                                                <button class="action-btn-small primary">Chart</button>
+                                            </div>
+                                        </div>
+                                        <div class="security-item">
+                                            <div class="security-main">
+                                                <div class="security-name">RENK Group</div>
+                                                <div class="security-meta">Aktie • WKN RENK73 • Xetra</div>
+                                            </div>
+                                            <div class="security-price">
+                                                <div class="price-value">69,300 EUR</div>
+                                                <div class="price-change positive">+4,09 %</div>
+                                                <div class="price-time">17:44:42</div>
+                                            </div>
+                                            <div class="security-actions">
+                                                <button class="action-btn-small">Profil</button>
+                                                <button class="action-btn-small primary">Chart</button>
+                                            </div>
+                                        </div>
+                                        <div class="security-item">
+                                            <div class="security-main">
+                                                <div class="security-name">Siemens Energy</div>
+                                                <div class="security-meta">Aktie • WKN ENER6Y • Xetra</div>
+                                            </div>
+                                            <div class="security-price">
+                                                <div class="price-value">89,500 EUR</div>
+                                                <div class="price-change positive">+2,19 %</div>
+                                                <div class="price-time">17:44:59</div>
+                                            </div>
+                                            <div class="security-actions">
+                                                <button class="action-btn-small">Profil</button>
+                                                <button class="action-btn-small primary">Chart</button>
+                                            </div>
+                                        </div>
+                                        <div class="security-item">
+                                            <div class="security-main">
+                                                <div class="security-name">Dow Jones</div>
+                                                <div class="security-meta">Index • WKN 969420</div>
+                                            </div>
+                                            <div class="security-price">
+                                                <div class="price-value">45.338,69 Pkt.</div>
+                                                <div class="price-change negative">-0,14 %</div>
+                                                <div class="price-time">19:55:33</div>
+                                            </div>
+                                            <div class="security-actions">
+                                                <button class="action-btn-small">Profil</button>
+                                                <button class="action-btn-small primary">Chart</button>
+                                            </div>
+                                        </div>
+                                        <div class="security-item">
+                                            <div class="security-main">
+                                                <div class="security-name">US Tech 100</div>
+                                                <div class="security-meta">Index</div>
+                                            </div>
+                                            <div class="security-price">
+                                                <div class="price-value">23.541,90</div>
+                                                <div class="price-change positive">+0,09 %</div>
+                                                <div class="price-time"></div>
+                                            </div>
+                                            <div class="security-actions">
+                                                <button class="action-btn-small">Profil</button>
+                                                <button class="action-btn-small primary">Chart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="news-result-item">
-                                        <div class="news-title">DAX erreicht neues Jahreshoch</div>
-                                        <div class="news-meta">vor 4 Stunden • Börse</div>
+                                    <a href="#" class="show-all-link">Alle Ergebnisse →</a>
+                                </div>
+                                
+                                <!-- Right Column: Pages and Derivatives -->
+                                <div class="search-right-column">
+                                    <h3 class="column-title">SEITEN</h3>
+                                    <div class="pages-results">
+                                        <div class="page-result-item">
+                                            <div class="page-result-title">Directors' Dealings</div>
+                                            <div class="page-result-path">News & Analysen > News > Directors' Dealings</div>
+                                        </div>
+                                        <div class="page-result-item">
+                                            <div class="page-result-title">Aktien Vergleich</div>
+                                            <div class="page-result-path">Tools > Vergleiche > Aktien</div>
+                                        </div>
+                                        <div class="page-result-item">
+                                            <div class="page-result-title">Portfolio-Tracker</div>
+                                            <div class="page-result-path">Tools > Portfolio</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3 class="column-title" style="margin-top: 20px;">PASSENDE DERIVATE</h3>
+                                    <div class="derivatives-section">
+                                        <div class="derivative-item">
+                                            <div class="derivative-header">
+                                                <span class="derivative-type">Turbo Long</span>
+                                                <span class="derivative-issuer">HSBC</span>
+                                            </div>
+                                            <div class="derivative-details">
+                                                <div class="derivative-info">
+                                                    <span class="label">Hebel:</span>
+                                                    <span class="value">5,2x</span>
+                                                </div>
+                                                <div class="derivative-info">
+                                                    <span class="label">KO:</span>
+                                                    <span class="value">95,00 EUR</span>
+                                                </div>
+                                            </div>
+                                            <button class="derivative-btn">Details</button>
+                                        </div>
+                                        <div class="derivative-item">
+                                            <div class="derivative-header">
+                                                <span class="derivative-type">Call-Optionsschein</span>
+                                                <span class="derivative-issuer">Goldman Sachs</span>
+                                            </div>
+                                            <div class="derivative-details">
+                                                <div class="derivative-info">
+                                                    <span class="label">Strike:</span>
+                                                    <span class="value">125,00 EUR</span>
+                                                </div>
+                                                <div class="derivative-info">
+                                                    <span class="label">Laufzeit:</span>
+                                                    <span class="value">Jun 2025</span>
+                                                </div>
+                                            </div>
+                                            <button class="derivative-btn">Details</button>
+                                        </div>
+                                        <div class="derivative-ad">
+                                            <div class="ad-label">Anzeige</div>
+                                            <div class="ad-content">
+                                                <div style="background: #f0f0f0; padding: 40px 20px; text-align: center; border-radius: 4px;">
+                                                    <div style="color: #999; font-size: 12px;">Werbung</div>
+                                                    <div style="margin-top: 10px; color: #666;">Derivate-Partner</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bottom Section: News -->
+                            <div class="search-news-section">
+                                <h3 class="column-title">NEWS</h3>
+                                <div class="news-list">
+                                    <div class="news-item">
+                                        <div class="news-time">08:00 Uhr</div>
+                                        <div class="news-content">
+                                            <div class="news-title">Original-Research: Almonty Industries Inc. (von GBC AG): Buy</div>
+                                            <div class="news-source">dpa-AFX</div>
+                                        </div>
+                                    </div>
+                                    <div class="news-item">
+                                        <div class="news-time">08:00 Uhr</div>
+                                        <div class="news-content">
+                                            <div class="news-title">Original-Research: Almonty Industries Inc. (von GBC AG): Kaufen</div>
+                                            <div class="news-source">dpa-AFX</div>
+                                        </div>
+                                    </div>
+                                    <div class="news-item">
+                                        <div class="news-time">15:04 Uhr</div>
+                                        <div class="news-content">
+                                            <div class="news-title">Gegenwind aus vielen Richtungen | Renditen treffen Aktien.</div>
+                                            <div class="news-source">Markus Koch</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +398,7 @@
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="12" cy="7" r="4"></circle>
                                 </svg>
-                                <span>Login</span>
+                                <span>Anmelden</span>
                             </button>
                         </div>
 
@@ -233,18 +411,24 @@
         <nav class="header-secondary">
             <div class="container">
                 <ul class="main-nav">
-                    <li class="has-asset-menu">
+                    <li class="has-mega-menu" data-menu="markets">
                         <a href="#" class="main-nav-link">Märkte <span class="dropdown-arrow">▼</span></a>
                     </li>
-                    <li><a href="#" class="main-nav-link">News & Analysen</a></li>
-                    <li><a href="#" class="main-nav-link">Forum</a></li>
-                    <li><a href="#" class="main-nav-link">Portfolio-Tracker</a></li>
+                    <li class="has-mega-menu" data-menu="news">
+                        <a href="#" class="main-nav-link">News & Analysen <span class="dropdown-arrow">▼</span></a>
+                    </li>
+                    <li class="has-mega-menu" data-menu="community">
+                        <a href="#" class="main-nav-link">Community <span class="dropdown-arrow">▼</span></a>
+                    </li>
+                    <li class="has-mega-menu" data-menu="portfolio">
+                        <a href="#" class="main-nav-link">Portfolio-Tracker <span class="dropdown-arrow">▼</span></a>
+                    </li>
                 </ul>
             </div>
         </nav>
         
-        <!-- Bloomberg-Style Mega Menu -->
-        <div class="mega-menu" id="mega-menu">
+        <!-- Mega Menu: Märkte -->
+        <div class="mega-menu" id="mega-menu-markets" data-menu="markets">
             <div class="mega-menu-content">
                 <div class="container">
                     <div class="mega-menu-grid">
@@ -253,12 +437,96 @@
                             <div class="menu-section">
                                 <h4 class="menu-section-title">Asset-Klassen</h4>
                                 <div class="menu-links">
-                                    <a href="/aktien" class="menu-link">Aktien</a>
-                                    <a href="/indizes" class="menu-link">Indizes</a>
-                                    <a href="/etfs" class="menu-link">ETFs</a>
-                                    <a href="/fonds" class="menu-link">Fonds</a>
-                                    <a href="/zertifikate" class="menu-link">Zertifikate</a>
-                                    <a href="/hebelprodukte" class="menu-link">Hebelprodukte</a>
+                                    <div class="menu-item-with-submenu">
+                                        <a href="/aktien" class="menu-link has-submenu">
+                                            Aktien
+                                            <svg class="submenu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="/aktien/dax" class="submenu-link">DAX</a>
+                                            <a href="/aktien/tecdax" class="submenu-link">TecDAX</a>
+                                            <a href="/aktien/mdax" class="submenu-link">MDAX</a>
+                                            <a href="/aktien/dow-jones" class="submenu-link">Dow Jones</a>
+                                            <a href="/aktien/realtime" class="submenu-link">Weitere (Realtime-)Listen</a>
+                                            <a href="/aktien/indizes" class="submenu-link">Indizes</a>
+                                            <a href="/aktien/dividenden" class="submenu-link">Dividenden</a>
+                                            <a href="/aktien/nachhaltige" class="submenu-link">Nachhaltige Aktien</a>
+                                            <a href="/aktien/ipos" class="submenu-link">IPOs</a>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-with-submenu">
+                                        <a href="/indizes" class="menu-link has-submenu">
+                                            Indizes
+                                            <svg class="submenu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="/indizes/deutschland" class="submenu-link">Deutschland</a>
+                                            <a href="/indizes/europa" class="submenu-link">Europa</a>
+                                            <a href="/indizes/usa" class="submenu-link">USA</a>
+                                            <a href="/indizes/asien" class="submenu-link">Asien</a>
+                                            <a href="/indizes/welt" class="submenu-link">Welt</a>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-with-submenu">
+                                        <a href="/etfs" class="menu-link has-submenu">
+                                            ETFs
+                                            <svg class="submenu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="/etfs/aktien" class="submenu-link">Aktien-ETFs</a>
+                                            <a href="/etfs/renten" class="submenu-link">Renten-ETFs</a>
+                                            <a href="/etfs/rohstoffe" class="submenu-link">Rohstoff-ETFs</a>
+                                            <a href="/etfs/themen" class="submenu-link">Themen-ETFs</a>
+                                            <a href="/etfs/sparplaene" class="submenu-link">ETF-Sparpläne</a>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-with-submenu">
+                                        <a href="/fonds" class="menu-link has-submenu">
+                                            Fonds
+                                            <svg class="submenu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="/fonds/aktienfonds" class="submenu-link">Aktienfonds</a>
+                                            <a href="/fonds/rentenfonds" class="submenu-link">Rentenfonds</a>
+                                            <a href="/fonds/mischfonds" class="submenu-link">Mischfonds</a>
+                                            <a href="/fonds/immobilienfonds" class="submenu-link">Immobilienfonds</a>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-with-submenu">
+                                        <a href="/zertifikate" class="menu-link has-submenu">
+                                            Zertifikate
+                                            <svg class="submenu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="/zertifikate/discount" class="submenu-link">Discount-Zertifikate</a>
+                                            <a href="/zertifikate/bonus" class="submenu-link">Bonus-Zertifikate</a>
+                                            <a href="/zertifikate/index" class="submenu-link">Index-Zertifikate</a>
+                                            <a href="/zertifikate/garantie" class="submenu-link">Garantie-Zertifikate</a>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item-with-submenu">
+                                        <a href="/hebelprodukte" class="menu-link has-submenu">
+                                            Hebelprodukte
+                                            <svg class="submenu-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </a>
+                                        <div class="submenu">
+                                            <a href="/hebelprodukte/optionsscheine" class="submenu-link">Optionsscheine</a>
+                                            <a href="/hebelprodukte/knockouts" class="submenu-link">Knock-Outs</a>
+                                            <a href="/hebelprodukte/faktor" class="submenu-link">Faktor-Zertifikate</a>
+                                        </div>
+                                    </div>
                                     <a href="/anleihen" class="menu-link">Anleihen</a>
                                     <a href="/devisen" class="menu-link">Devisen</a>
                                     <a href="/krypto" class="menu-link">Kryptowährungen</a>
@@ -319,6 +587,175 @@
                                     <div class="market-name">ÖL (BRENT)</div>
                                     <div class="market-value">67,31</div>
                                     <div class="market-change negative">▼ -0,08%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mega Menu: News & Analysen -->
+        <div class="mega-menu" id="mega-menu-news" data-menu="news">
+            <div class="mega-menu-content">
+                <div class="container">
+                    <div class="mega-menu-grid">
+                        <!-- Left Column: News Categories -->
+                        <div class="mega-menu-nav">
+                            <div class="menu-section">
+                                <h4 class="menu-section-title">News-Kategorien</h4>
+                                <div class="menu-links">
+                                    <a href="/news/aktuell" class="menu-link">Aktuelle News</a>
+                                    <a href="/news/analysen" class="menu-link">Analysen</a>
+                                    <a href="/news/kolumnen" class="menu-link">Kolumnen</a>
+                                    <a href="/news/interviews" class="menu-link">Interviews</a>
+                                    <a href="/news/adhoc" class="menu-link">Ad-hoc Mitteilungen</a>
+                                    <a href="/news/directors-dealings" class="menu-link">Directors' Dealings</a>
+                                    <a href="/news/termine" class="menu-link">Termine</a>
+                                    <a href="/news/videos" class="menu-link">Videos</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column: Hot News -->
+                        <div class="mega-menu-markets">
+                            <h4 class="menu-section-title">Top News</h4>
+                            <div class="news-feed">
+                                <div class="news-feed-item">
+                                    <div class="news-feed-time">vor 15 Min.</div>
+                                    <div class="news-feed-title">EZB hält Leitzins stabil - Euro gibt nach</div>
+                                </div>
+                                <div class="news-feed-item">
+                                    <div class="news-feed-time">vor 1 Std.</div>
+                                    <div class="news-feed-title">DAX schließt über 24.000 Punkten</div>
+                                </div>
+                                <div class="news-feed-item">
+                                    <div class="news-feed-time">vor 2 Std.</div>
+                                    <div class="news-feed-title">Tesla übertrifft Erwartungen im Q4</div>
+                                </div>
+                                <div class="news-feed-item">
+                                    <div class="news-feed-time">vor 3 Std.</div>
+                                    <div class="news-feed-title">Goldpreis erreicht neues Jahreshoch</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mega Menu: Community -->
+        <div class="mega-menu" id="mega-menu-community" data-menu="community">
+            <div class="mega-menu-content">
+                <div class="container">
+                    <div class="mega-menu-grid">
+                        <!-- Left Column: Forum & Games -->
+                        <div class="mega-menu-nav">
+                            <div class="menu-section">
+                                <h4 class="menu-section-title">Forum</h4>
+                                <div class="menu-links">
+                                    <a href="/forum/aktien" class="menu-link">Aktien-Forum</a>
+                                    <a href="/forum/rohstoffe" class="menu-link">Rohstoffe & Devisen</a>
+                                    <a href="/forum/derivate" class="menu-link">Derivate & Zertifikate</a>
+                                    <a href="/forum/krypto" class="menu-link">Kryptowährungen</a>
+                                    <a href="/forum/boersenwissen" class="menu-link">Börsenwissen</a>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-section">
+                                <h4 class="menu-section-title">Börsenspiele</h4>
+                                <div class="menu-links">
+                                    <a href="/boersenspiel/aktuell" class="menu-link">Aktuelle Spiele</a>
+                                    <a href="/boersenspiel/rangliste" class="menu-link">Ranglisten</a>
+                                    <a href="/boersenspiel/erstellen" class="menu-link">Spiel erstellen</a>
+                                    <a href="/boersenspiel/regeln" class="menu-link">Spielregeln</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column: Hot Topics -->
+                        <div class="mega-menu-markets">
+                            <h4 class="menu-section-title">Heiße Themen</h4>
+                            <div class="forum-topics">
+                                <div class="forum-topic">
+                                    <div class="topic-title">NVIDIA nach Earnings - Quo vadis?</div>
+                                    <div class="topic-meta">234 Antworten • 5.2k Views</div>
+                                </div>
+                                <div class="forum-topic">
+                                    <div class="topic-title">Bitcoin über 100k - Blase oder Beginn?</div>
+                                    <div class="topic-meta">189 Antworten • 3.8k Views</div>
+                                </div>
+                                <div class="forum-topic">
+                                    <div class="topic-title">Deutsche Bank - Turnaround geschafft?</div>
+                                    <div class="topic-meta">156 Antworten • 2.9k Views</div>
+                                </div>
+                                <div class="forum-topic">
+                                    <div class="topic-title">Wasserstoff-Aktien: Chance oder Falle?</div>
+                                    <div class="topic-meta">112 Antworten • 2.1k Views</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mega Menu: Portfolio-Tracker -->
+        <div class="mega-menu" id="mega-menu-portfolio" data-menu="portfolio">
+            <div class="mega-menu-content">
+                <div class="container">
+                    <div class="mega-menu-grid">
+                        <!-- Not Logged In: Promotion -->
+                        <div class="portfolio-promo" id="portfolio-promo">
+                            <div class="promo-content">
+                                <h3 class="promo-title">Ihr persönlicher Portfolio-Tracker</h3>
+                                <p class="promo-text">Verwalten Sie Ihre Investments professionell und kostenlos</p>
+                                <ul class="promo-features">
+                                    <li>✓ Realtime-Kurse und Performance-Tracking</li>
+                                    <li>✓ Watchlists und Alarme</li>
+                                    <li>✓ Detaillierte Analysen und Reports</li>
+                                    <li>✓ Mehrere Portfolios verwalten</li>
+                                    <li>✓ 100% kostenlos</li>
+                                </ul>
+                                <div class="promo-buttons">
+                                    <a href="/register" class="btn-primary">Jetzt kostenlos registrieren</a>
+                                    <a href="/login" class="btn-secondary">Anmelden</a>
+                                </div>
+                            </div>
+                            <div class="promo-image">
+                                <div class="portfolio-preview">
+                                    <div class="preview-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Logged In: Portfolio Performance (hidden by default) -->
+                        <div class="portfolio-performance" id="portfolio-performance" style="display: none;">
+                            <div class="mega-menu-nav">
+                                <div class="menu-section">
+                                    <h4 class="menu-section-title">Ihre Portfolios</h4>
+                                    <div class="portfolio-list">
+                                        <div class="portfolio-item">
+                                            <div class="portfolio-name">Hauptdepot</div>
+                                            <div class="portfolio-value">125.340 €</div>
+                                            <div class="portfolio-change positive">+12,3%</div>
+                                        </div>
+                                        <div class="portfolio-item">
+                                            <div class="portfolio-name">Trading</div>
+                                            <div class="portfolio-value">8.520 €</div>
+                                            <div class="portfolio-change negative">-2,1%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mega-menu-markets">
+                                <h4 class="menu-section-title">Tools</h4>
+                                <div class="menu-links">
+                                    <a href="/portfolio/overview" class="menu-link">Übersicht</a>
+                                    <a href="/portfolio/analysis" class="menu-link">Analyse</a>
+                                    <a href="/portfolio/transactions" class="menu-link">Transaktionen</a>
+                                    <a href="/portfolio/watchlist" class="menu-link">Watchlist</a>
+                                    <a href="/portfolio/alerts" class="menu-link">Alarme</a>
                                 </div>
                             </div>
                         </div>
@@ -442,8 +879,10 @@
     <script>
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
+        const searchResultsEmpty = document.getElementById('search-results-empty');
         const searchToggleMobile = document.getElementById('search-toggle-mobile');
         const searchContainer = document.getElementById('search-container');
+        const chartButton = document.querySelector('.chart-button');
         
         // Sample stock data with mini-charts
         const stocks = [
@@ -501,14 +940,42 @@
             `;
         }
         
+        // Chart button functionality
+        if (chartButton) {
+            chartButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                console.log('Opening chart tool');
+                // window.location.href = '/chart-tool';
+            });
+        }
+        
+        // Finder button functionality
+        document.querySelectorAll('.finder-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.finder-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // Filter results based on selected type
+                console.log('Filtering by:', this.textContent);
+            });
+        });
+        
         searchInput.addEventListener('input', function(e) {
             const query = e.target.value.toLowerCase();
             
-            if (query.length < 2) {
-                searchResults.style.display = 'none';
+            if (query.length < 1) {
+                // Show empty state
+                searchResults.classList.remove('active');
+                searchResultsEmpty.classList.add('active');
+                return;
+            } else {
+                // Show active search results with the predefined HTML structure
+                searchResultsEmpty.classList.remove('active');
+                searchResults.classList.add('active');
+                // Don't overwrite the HTML - it's already defined in the HTML file
                 return;
             }
             
+            /* DISABLED - Using predefined HTML structure instead
             const filtered = stocks.filter(stock => 
                 stock.name.toLowerCase().includes(query) || 
                 stock.symbol.toLowerCase().includes(query)
@@ -559,8 +1026,9 @@
         
         // Hide results when clicking outside
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('.search-section')) {
-                searchResults.style.display = 'none';
+            if (!e.target.closest('.search-section') && !e.target.closest('.search-container')) {
+                searchResults.classList.remove('active');
+                searchResultsEmpty.classList.remove('active');
             }
         });
         
@@ -575,7 +1043,8 @@
             }
             // ESC to close search
             if (e.key === 'Escape') {
-                searchResults.style.display = 'none';
+                searchResults.classList.remove('active');
+                searchResultsEmpty.classList.remove('active');
                 searchInput.blur();
             }
         });
@@ -592,9 +1061,15 @@
             }
         });
         
-        // Show recent searches on focus
+        // Show empty state on focus
         searchInput.addEventListener('focus', function() {
             if (!this.value) {
+                // Show empty state search
+                searchResultsEmpty.classList.add('active');
+                searchResults.classList.remove('active');
+                return;
+            }
+            /* DISABLED - Using predefined HTML structure
                 // Show modern search dropdown with all sections
                 searchResults.innerHTML = `
                     <div class="search-dropdown-modern">
@@ -703,6 +1178,7 @@
                 // Show the Onvista-style search results
                 searchResults.classList.add('active');
             }
+            */
         });
         
         // Enhanced search section collapsing
@@ -731,57 +1207,68 @@
             }
         });
         
-        // Mega Menu handling
-        const marketsLink = document.querySelector('.has-asset-menu');
-        const megaMenu = document.getElementById('mega-menu');
+        // Mega Menu handling for all menu items
+        const megaMenuItems = document.querySelectorAll('.has-mega-menu');
+        const megaMenus = document.querySelectorAll('.mega-menu');
         let megaMenuTimeout;
         
-        // Show mega menu on Markets hover
-        if (marketsLink && megaMenu) {
-            marketsLink.addEventListener('mouseenter', function() {
-                clearTimeout(megaMenuTimeout);
-                marketsLink.classList.add('active');
-                megaMenu.classList.add('active');
-            });
+        megaMenuItems.forEach(menuItem => {
+            const menuType = menuItem.getAttribute('data-menu');
+            const correspondingMenu = document.getElementById(`mega-menu-${menuType}`);
             
-            marketsLink.addEventListener('mouseleave', function() {
-                megaMenuTimeout = setTimeout(() => {
-                    if (!megaMenu.matches(':hover')) {
-                        marketsLink.classList.remove('active');
-                        megaMenu.classList.remove('active');
-                    }
-                }, 100);
-            });
-            
-            // Keep mega menu visible when hovering over it
-            megaMenu.addEventListener('mouseenter', function() {
-                clearTimeout(megaMenuTimeout);
-                marketsLink.classList.add('active');
-            });
-            
-            megaMenu.addEventListener('mouseleave', function() {
-                megaMenuTimeout = setTimeout(() => {
-                    marketsLink.classList.remove('active');
-                    megaMenu.classList.remove('active');
-                }, 100);
-            });
-        }
+            if (correspondingMenu) {
+                menuItem.addEventListener('mouseenter', function() {
+                    clearTimeout(megaMenuTimeout);
+                    
+                    // Close all other menus
+                    megaMenuItems.forEach(item => item.classList.remove('active'));
+                    megaMenus.forEach(menu => menu.classList.remove('active'));
+                    
+                    // Open this menu
+                    menuItem.classList.add('active');
+                    correspondingMenu.classList.add('active');
+                });
+                
+                menuItem.addEventListener('mouseleave', function() {
+                    megaMenuTimeout = setTimeout(() => {
+                        if (!correspondingMenu.matches(':hover')) {
+                            menuItem.classList.remove('active');
+                            correspondingMenu.classList.remove('active');
+                        }
+                    }, 100);
+                });
+                
+                // Keep mega menu visible when hovering over it
+                correspondingMenu.addEventListener('mouseenter', function() {
+                    clearTimeout(megaMenuTimeout);
+                    menuItem.classList.add('active');
+                });
+                
+                correspondingMenu.addEventListener('mouseleave', function() {
+                    megaMenuTimeout = setTimeout(() => {
+                        menuItem.classList.remove('active');
+                        correspondingMenu.classList.remove('active');
+                    }, 100);
+                });
+            }
+        });
         
         // Close mega menu on ESC key
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && megaMenu && megaMenu.classList.contains('active')) {
-                megaMenu.classList.remove('active');
-                marketsLink.classList.remove('active');
+            if (e.key === 'Escape') {
+                megaMenuItems.forEach(item => item.classList.remove('active'));
+                megaMenus.forEach(menu => menu.classList.remove('active'));
             }
         });
         
         // Close mega menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (megaMenu && megaMenu.classList.contains('active')) {
-                if (!megaMenu.contains(e.target) && !marketsLink.contains(e.target)) {
-                    megaMenu.classList.remove('active');
-                    marketsLink.classList.remove('active');
-                }
+            const isClickInsideMenu = Array.from(megaMenus).some(menu => menu.contains(e.target));
+            const isClickOnMenuItem = Array.from(megaMenuItems).some(item => item.contains(e.target));
+            
+            if (!isClickInsideMenu && !isClickOnMenuItem) {
+                megaMenuItems.forEach(item => item.classList.remove('active'));
+                megaMenus.forEach(menu => menu.classList.remove('active'));
             }
         });
         
